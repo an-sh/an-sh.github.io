@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>Chat service Documentation</title>
+  <script src='../javascript/application.js'></script>
+  <script src='../javascript/search.js'></script>
+  <link rel='stylesheet' href='../stylesheets/application.css' type='text/css'>
+</head>
+  <body>
+    <div id='base' data-path='../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../extra/README.md.html' title='Chat service'>
+      Chat service
+    </a>
+    &raquo;
+    <a href='../alphabetical_index.html' title='Index'>
+      Index
+    </a>
+    &raquo;
+    <span class='title'>ChatService</span>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        ChatService
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>lib&#47;chat.coffee</td>
+        </tr>
+      </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <p>An instance creates a new chat service.</p>
+</div>
+<div class='tags'>
+</div>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#close-dynamic'>
+        #
+(void)
+<b>close</b><span>(done = function() {})</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Closes server. 
+    </span>
+  </li>
+</ul>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-dynamic'>
+      #
+(void)
+<b>constructor</b><span>(options = {}, hooks = {}, state = &#39;memory&#39;)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Server creation/integration.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>options</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Options. </span>
+    </li>
+    <li>
+      <span class='name'>hooks</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Hooks. Every <code>UserCommand</code> is wrapped with the corresponding Before and After hooks. So a hook name will look like <code>roomCreateBefore</code>. Before hook is ran after arguments validation, but before an actual server command processing. After hook is executed after a server has finshed command processing. Check Hooks unit tests section in the <code>test</code> directory for more details and hooks usage examples. </span>
+    </li>
+    <li>
+      <span class='name'>state</span>
+      <span class='type'>
+        (
+          <tt>String or Constructor</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Chat state. Can be either &#39;memory&#39; or &#39;redis&#39; for built-in state storage, or a custom state constructor function that implements the same API. </span>
+    </li>
+  </ul>
+  <h3>
+    Options Hash:
+    (options):
+  </h3>
+  <ul class='options'>
+    <li>
+      <span class='name'>namespace</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>io namespace, default is &#39;/chat-service&#39;. </span>
+    </li>
+    <li>
+      <span class='name'>historyMaxMessages</span>
+      <span class='type'>
+        (
+          <tt>Integer</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>room history size, default is 100. </span>
+    </li>
+    <li>
+      <span class='name'>useRawErrorObjects</span>
+      <span class='type'>
+        (
+          <tt>Boolean</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Send error objects (see <a href='../class/ErrorBuilder.html'>ErrorBuilder</a>) instead of strings, default is false. </span>
+    </li>
+    <li>
+      <span class='name'>enableUserlistUpdates</span>
+      <span class='type'>
+        (
+          <tt>Boolean</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Enables <a href='../class/ServerMessages.html#roomUserJoined-dynamic'>ServerMessages#roomUserJoined</a> and <a href='../class/ServerMessages.html#roomUserLeft-dynamic'>ServerMessages#roomUserLeft</a> messages, default is false. </span>
+    </li>
+    <li>
+      <span class='name'>enableAdminlistUpdates</span>
+      <span class='type'>
+        (
+          <tt>Boolean</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Enables <a href='../class/ServerMessages.html#roomAdminAdded-dynamic'>ServerMessages#roomAdminAdded</a> and <a href='../class/ServerMessages.html#roomAdminRemoved-dynamic'>ServerMessages#roomAdminRemoved</a> messages, default is false. </span>
+    </li>
+    <li>
+      <span class='name'>enableDirectMessages</span>
+      <span class='type'>
+        (
+          <tt>Boolean</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Enables user to user <a href='../class/UserCommands.html#directMessage-dynamic'>UserCommands#directMessage</a>, default is false. </span>
+    </li>
+    <li>
+      <span class='name'>serverOptions</span>
+      <span class='type'>
+        (
+          <tt>Boolean</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Options that are passed to socket.io if server creation is required. </span>
+    </li>
+    <li>
+      <span class='name'>stateOptions</span>
+      <span class='type'>
+        (
+          <tt>Boolean</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Options that are passed to a service state. </span>
+    </li>
+    <li>
+      <span class='name'>io</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Socket.io instance that should be used by ChatService. </span>
+    </li>
+    <li>
+      <span class='name'>http</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Use socket.io http server integration. </span>
+    </li>
+  </ul>
+  <h3>
+    Options Hash:
+    (hooks):
+  </h3>
+  <ul class='options'>
+    <li>
+      <span class='name'>auth</span>
+      <span class='type'>
+        (
+          <tt>Function</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Socket.io auth hook. Look in the socket.io documentation. </span>
+    </li>
+    <li>
+      <span class='name'>onConnect</span>
+      <span class='type'>
+        (
+          <tt>Function(&lt;ChatService&gt;, &lt;Socket&gt;, &lt;Function(&lt;Error&gt;, &lt;String&gt;, &lt;Object&gt;, &lt;Object&gt;)&gt;)</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Client connection hook. Must call a callback with either error or user name, auth data and user state. User name and auth data are send back with <code>loginConfirmed</code> message. Error is sent as <code>loginRejected</code> message. User state is the same as <a href='../class/User.html#initState-dynamic'>User#initState</a>. </span>
+    </li>
+    <li>
+      <span class='name'>onClose</span>
+      <span class='type'>
+        (
+          <tt>Function(&lt;ChatService&gt;, &lt;Error&gt;, &lt;Function(&lt;Error&gt;)&gt;)</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Executes when server is closed. Must call a callback. </span>
+    </li>
+    <li>
+      <span class='name'>onStart</span>
+      <span class='type'>
+        (
+          <tt>Function(&lt;ChatService&gt;, &lt;Function(&lt;Error&gt;)&gt;)</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Executes when server is started. Must call a callback. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='close-dynamic'>
+      #
+(void)
+<b>close</b><span>(done = function() {})</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Closes server.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>done</span>
+      <span class='type'>
+        (
+          <tt>callback</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Optional callback. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  November 18, 15 18:30:51 by
+  <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
+    Codo
+  </a>
+  2.0.11
+  &#10034;
+  Press H to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/netzpirat' target='_parent'>@netzpirat</a>
+  &#10034;
+  <a href='http://twitter.com/_inossidabile' target='_parent'>@_inossidabile</a>
+</div>
+<iframe id='search_frame'></iframe>
+<div id='fuzzySearch'>
+  <input type='text'>
+  <ol></ol>
+</div>
+<div id='help'>
+  <p>
+    Quickly fuzzy find classes, mixins, methods, file:
+  </p>
+  <ul>
+    <li>
+      <span>T</span>
+      Open fuzzy finder dialog
+    </li>
+  </ul>
+  <p>
+    Control the navigation frame:
+  </p>
+  <ul>
+    <li>
+      <span>L</span>
+      Toggle list view
+    </li>
+    <li>
+      <span>C</span>
+      Show class list
+    </li>
+    <li>
+      <span>I</span>
+      Show mixin list
+    </li>
+    <li>
+      <span>F</span>
+      Show file list
+    </li>
+    <li>
+      <span>M</span>
+      Show method list
+    </li>
+    <li>
+      <span>E</span>
+      Show extras list
+    </li>
+  </ul>
+  <p>
+    You can focus and blur the search input:
+  </p>
+  <ul>
+    <li>
+      <span>S</span>
+      Focus search input
+    </li>
+    <li>
+      <span>Esc</span>
+      Blur search input
+    </li>
+  </ul>
+</div>
+  </body>
+</html>

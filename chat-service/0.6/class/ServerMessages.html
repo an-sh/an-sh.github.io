@@ -168,7 +168,7 @@ socket.on &#39;loginConfirmed&#39;, (username) -&gt;
       <a href='#roomJoinedEcho-dynamic'>
         #
 (void)
-<b>roomJoinedEcho</b><span>(roomName)</span>
+<b>roomJoinedEcho</b><span>(roomName, njoined)</span>
       </a>
     </span>
     <span class='desc'>
@@ -180,7 +180,7 @@ socket.on &#39;loginConfirmed&#39;, (username) -&gt;
       <a href='#roomLeftEcho-dynamic'>
         #
 (void)
-<b>roomLeftEcho</b><span>(roomName)</span>
+<b>roomLeftEcho</b><span>(roomName, njoined)</span>
       </a>
     </span>
     <span class='desc'>
@@ -539,13 +539,36 @@ echo.</p>
     <p class='signature' id='roomJoinedEcho-dynamic'>
       #
 (void)
-<b>roomJoinedEcho</b><span>(roomName)</span>
+<b>roomJoinedEcho</b><span>(roomName, njoined)</span>
       <br>
     </p>
     <div class='docstring'>
   <p>Echoes room join from other user&#39;s connections.</p>
 </div>
 <div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>userName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Username. </span>
+    </li>
+    <li>
+      <span class='name'>njoined</span>
+      <span class='type'>
+        (
+          <tt>Number</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Number of sockets that are still joined. </span>
+    </li>
+  </ul>
   <h3>See also:</h3>
   <ul class='see'>
     <li>
@@ -558,13 +581,36 @@ echo.</p>
     <p class='signature' id='roomLeftEcho-dynamic'>
       #
 (void)
-<b>roomLeftEcho</b><span>(roomName)</span>
+<b>roomLeftEcho</b><span>(roomName, njoined)</span>
       <br>
     </p>
     <div class='docstring'>
   <p>Echoes room leave from other user&#39;s connections.</p>
 </div>
 <div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>userName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Username. </span>
+    </li>
+    <li>
+      <span class='name'>njoined</span>
+      <span class='type'>
+        (
+          <tt>Number</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Number of sockets that are still joined. </span>
+    </li>
+  </ul>
   <h3>See also:</h3>
   <ul class='see'>
     <li>
@@ -712,7 +758,7 @@ echo.</p>
 </div>
     </div>
     <div id='footer'>
-  November 18, 15 18:30:51 by
+  November 20, 15 19:14:06 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

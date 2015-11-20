@@ -237,7 +237,7 @@ socket.on &#39;loginConfirmed&#39;, (username, authData) -&gt;
     <span class='signature'>
       <a href='#roomJoin-dynamic'>
         #
-(error, null)
+(error, Number)
 <b>roomJoin</b><span>(roomName)</span>
       </a>
     </span>
@@ -250,7 +250,7 @@ socket.on &#39;loginConfirmed&#39;, (username, authData) -&gt;
     <span class='signature'>
       <a href='#roomLeave-dynamic'>
         #
-(error, null)
+(error, Number)
 <b>roomLeave</b><span>(roomName)</span>
       </a>
     </span>
@@ -877,7 +877,7 @@ join.</p>
   <div class='method_details'>
     <p class='signature' id='roomJoin-dynamic'>
       #
-(error, null)
+(error, Number)
 <b>roomJoin</b><span>(roomName)</span>
       <br>
     </p>
@@ -907,10 +907,10 @@ true.</p>
     <li>
       <span class='type'></span>
       (
-        <tt>error, null</tt>
+        <tt>error, Number</tt>
       )
       &mdash;
-      <span class='desc'>Sends ack: error, null. </span>
+      <span class='desc'>Sends ack: error, number of joined user sockets. </span>
     </li>
   </ul>
   <h3>See also:</h3>
@@ -927,7 +927,7 @@ true.</p>
   <div class='method_details'>
     <p class='signature' id='roomLeave-dynamic'>
       #
-(error, null)
+(error, Number)
 <b>roomLeave</b><span>(roomName)</span>
       <br>
     </p>
@@ -955,10 +955,10 @@ users if <a href='../class/ChatService.html'>ChatService</a> <code>enableUserlis
     <li>
       <span class='type'></span>
       (
-        <tt>error, null</tt>
+        <tt>error, Number</tt>
       )
       &mdash;
-      <span class='desc'>Sends ack: error, null. </span>
+      <span class='desc'>Sends ack: error, number of joined user sockets. </span>
     </li>
   </ul>
   <h3>See also:</h3>
@@ -1150,7 +1150,7 @@ have lost an access permission in the result of an operation, sending
 </div>
     </div>
     <div id='footer'>
-  November 18, 15 18:30:51 by
+  November 20, 15 19:14:06 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

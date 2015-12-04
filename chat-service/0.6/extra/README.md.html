@@ -70,7 +70,9 @@ very straitforward and simple. Only for room commands a client must
 join a room to succesfully execute them.</p><pre><code class="lang-javascript">socket.on(&#39;roomMessage&#39;, function(room, user, msg) {
 });
 </code></pre><p>Also a server will send <code>ServerMessages</code>.  Note that these messages
-don&#39;t require any reply.</p><h3 id="documentation">Documentation</h3><p>Is available at <a href="http://an-sh.github.io/chat-service/0.6/">gitpages</a></p><p>Run <code>npm install -g codo</code> and <code>codo</code> to generate documentation. Public
+don&#39;t require any reply.</p><h3 id="frontend-example">Frontend example</h3><p>Angular based example application is in <code>example</code> directory. From this
+directory run <code>npm install &amp;&amp; gulp &amp;&amp; bin/www</code> to build application
+and start server (by default on port 3000).</p><p><img src="http://an-sh.github.io/chat-service/example.png" alt="Example" title="Example"></p><h3 id="documentation">Documentation</h3><p>Is available at <a href="http://an-sh.github.io/chat-service/0.6/">gitpages</a></p><p>Run <code>npm install -g codo</code> and <code>codo</code> to generate documentation. Public
 API consists of public methods of the following classes:</p><ul>
 <li>Class: <code>ServerMessages</code> - represents socket.io messages sent from a
 server to a client. No client reply is requered.</li>
@@ -85,7 +87,7 @@ setup and hooks usage.</p><h3 id="license">License</h3><p>MIT</p>
       </div>
     </div>
     <div id='footer'>
-  November 20, 15 19:14:06 by
+  December 05, 15 02:23:53 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>Chat service Documentation</title>
+  <script src='../javascript/application.js'></script>
+  <script src='../javascript/search.js'></script>
+  <link rel='stylesheet' href='../stylesheets/application.css' type='text/css'>
+</head>
+  <body>
+    <div id='base' data-path='../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../extra/README.md.html' title='Chat service'>
+      Chat service
+    </a>
+    &raquo;
+    <a href='../alphabetical_index.html' title='Index'>
+      Index
+    </a>
+    &raquo;
+    <span class='title'>ServerMessages</span>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        ServerMessages
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>lib&#47;ChatService.coffee</td>
+        </tr>
+      </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    This class describes socket.io server outgoing messages, not actual methods. 
+  </div>
+  <p>List of server messages that are sent to a client.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      Socket.io client example
+    </h4>
+    <pre><code class='coffeescript'>socket = ioClient.connect url, params
+socket.on &#39;loginConfirmed&#39;, (userName) -&gt;
+  socket.on &#39;directMessage&#39;, (fromUser, msg) -&gt;
+    # just the same as any event. no reply is required.</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#directMessage-dynamic'>
+        #
+(void)
+<b>directMessage</b><span>(msg)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Direct message. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#directMessageEcho-dynamic'>
+        #
+(void)
+<b>directMessageEcho</b><span>(toUser, msg)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Direct message echo. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#disconnect-dynamic'>
+        #
+(void)
+<b>disconnect</b><span>(reason)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Disconnected from a server. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#error-dynamic'>
+        #
+(void)
+<b>error</b><span>(error)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Error events, like socket.io middleware error. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#loginConfirmed-dynamic'>
+        #
+(void)
+<b>loginConfirmed</b><span>(userName, data)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates a successful login. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#loginRejected-dynamic'>
+        #
+(void)
+<b>loginRejected</b><span>(error)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates a login error. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomAccessRemoved-dynamic'>
+        #
+(void)
+<b>roomAccessRemoved</b><span>(roomName)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates that a user has lost a room access permission. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomAccessListAdded-dynamic'>
+        #
+(void)
+<b>roomAccessListAdded</b><span>(roomName, listName, userNames)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates a room access list add. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomAccessListRemoved-dynamic'>
+        #
+(void)
+<b>roomAccessListRemoved</b><span>(roomName, listName, userNames)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates a room access list remove. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomJoinedEcho-dynamic'>
+        #
+(void)
+<b>roomJoinedEcho</b><span>(roomName, id, njoined)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Echoes room join from other user&#39;s connections. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomLeftEcho-dynamic'>
+        #
+(void)
+<b>roomLeftEcho</b><span>(roomName, id, njoined)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Echoes room leave from other user&#39;s connections. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomMessage-dynamic'>
+        #
+(void)
+<b>roomMessage</b><span>(roomName, msg)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Room message. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomModeChanged-dynamic'>
+        #
+(void)
+<b>roomModeChanged</b><span>(roomName, mode)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates a room mode change. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomUserJoined-dynamic'>
+        #
+(void)
+<b>roomUserJoined</b><span>(roomName, userName)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates that an another user has joined a room. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomUserLeft-dynamic'>
+        #
+(void)
+<b>roomUserLeft</b><span>(roomName, userName)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates that an another user has left a room. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#socketConnectEcho-dynamic'>
+        #
+(void)
+<b>socketConnectEcho</b><span>(id, nconnected)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates a connection of an another socket with the same user. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#socketDisconnectEcho-dynamic'>
+        #
+(void)
+<b>socketDisconnectEcho</b><span>(id, nconnected)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Indicates a disconnection of an another socket with the same user. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#systemMessage-dynamic'>
+        #
+(void)
+<b>systemMessage</b><span>(data)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Custom message from a server or from an another socket of the same user. 
+    </span>
+  </li>
+</ul>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='directMessage-dynamic'>
+      #
+(void)
+<b>directMessage</b><span>(msg)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Direct message. A message will have timestamp and author fields,
+but other fields can be used if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a>
+<code>directMessagesChecker</code> hook is set.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>fromUser</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Message sender. </span>
+    </li>
+    <li>
+      <span class='name'>msg</span>
+      <span class='type'>
+        (
+          <tt>Object&lt;textMessage:String, timestamp:Number, author:String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Message. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#directMessage-dynamic'>UserCommands#directMessage</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='directMessageEcho-dynamic'>
+      #
+(void)
+<b>directMessageEcho</b><span>(toUser, msg)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Direct message echo. If an user have several connections from
+different sockets, and if one client sends
+<a href='../class/UserCommands.html#directMessage-dynamic'>UserCommands#directMessage</a>, others will receive a message echo.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>toUser</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Message receiver. </span>
+    </li>
+    <li>
+      <span class='name'>msg</span>
+      <span class='type'>
+        (
+          <tt>Object&lt;textMessage:String, timestamp:Number, author:String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Message. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#directMessage-dynamic'>UserCommands#directMessage</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='disconnect-dynamic'>
+      #
+(void)
+<b>disconnect</b><span>(reason)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    Socket.io system event. 
+  </div>
+  <p>Disconnected from a server.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>reason</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Socket.io disconnect info. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='error-dynamic'>
+      #
+(void)
+<b>error</b><span>(error)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    Socket.io system event. 
+  </div>
+  <p>Error events, like socket.io middleware error.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>error</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='loginConfirmed-dynamic'>
+      #
+(void)
+<b>loginConfirmed</b><span>(userName, data)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates a successful login.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>userName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserName. </span>
+    </li>
+    <li>
+      <span class='name'>data</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Additional login data with an id of the socket. </span>
+    </li>
+  </ul>
+  <h3>
+    Options Hash:
+    (data):
+  </h3>
+  <ul class='options'>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Socket id. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='loginRejected-dynamic'>
+      #
+(void)
+<b>loginRejected</b><span>(error)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates a login error.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>error</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Error. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomAccessRemoved-dynamic'>
+      #
+(void)
+<b>roomAccessRemoved</b><span>(roomName)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates that a user has lost a room access permission.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomAddToList-dynamic'>UserCommands#roomAddToList</a>
+    </li>
+    <li>
+      <a href='../class/UserCommands.html#roomRemoveFromList-dynamic'>UserCommands#roomRemoveFromList</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomAccessListAdded-dynamic'>
+      #
+(void)
+<b>roomAccessListAdded</b><span>(roomName, listName, userNames)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates a room access list add.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Rooms name. </span>
+    </li>
+    <li>
+      <span class='name'>listName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>&#39;blacklist&#39;, &#39;adminlist&#39; or &#39;whitelist&#39;. </span>
+    </li>
+    <li>
+      <span class='name'>userNames</span>
+      <span class='type'>
+        (
+          <tt>Array&lt;String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserNames removed from the list. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomAddToList-dynamic'>UserCommands#roomAddToList</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomAccessListRemoved-dynamic'>
+      #
+(void)
+<b>roomAccessListRemoved</b><span>(roomName, listName, userNames)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates a room access list remove.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Rooms name. </span>
+    </li>
+    <li>
+      <span class='name'>listName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>&#39;blacklist&#39;, &#39;adminlist&#39; or &#39;whitelist&#39;. </span>
+    </li>
+    <li>
+      <span class='name'>userNames</span>
+      <span class='type'>
+        (
+          <tt>Array&lt;String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserNames added to the list. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomRemoveFromList-dynamic'>UserCommands#roomRemoveFromList</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomJoinedEcho-dynamic'>
+      #
+(void)
+<b>roomJoinedEcho</b><span>(roomName, id, njoined)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Echoes room join from other user&#39;s connections.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserName. </span>
+    </li>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Socket id. </span>
+    </li>
+    <li>
+      <span class='name'>njoined</span>
+      <span class='type'>
+        (
+          <tt>Number</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Number of sockets that are still joined. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomJoin-dynamic'>UserCommands#roomJoin</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomLeftEcho-dynamic'>
+      #
+(void)
+<b>roomLeftEcho</b><span>(roomName, id, njoined)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Echoes room leave from other user&#39;s connections.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserName. </span>
+    </li>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Socket id. </span>
+    </li>
+    <li>
+      <span class='name'>njoined</span>
+      <span class='type'>
+        (
+          <tt>Number</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Number of sockets that are still joined. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomLeave-dynamic'>UserCommands#roomLeave</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomMessage-dynamic'>
+      #
+(void)
+<b>roomMessage</b><span>(roomName, msg)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Room message. A message will have timestamp, id and author fields,
+but other fields can be used if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a>
+<code>roomMessagesChecker</code> hook is set.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Rooms name. </span>
+    </li>
+    <li>
+      <span class='name'>msg</span>
+      <span class='type'>
+        (
+          <tt>Object&lt;textMessage:String, timestamp:Number, author:String, id:Number&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Message. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomMessage-dynamic'>UserCommands#roomMessage</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomModeChanged-dynamic'>
+      #
+(void)
+<b>roomModeChanged</b><span>(roomName, mode)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates a room mode change.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Rooms name. </span>
+    </li>
+    <li>
+      <span class='name'>mode</span>
+      <span class='type'>
+        (
+          <tt>Boolean</tt>
+        )
+      </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomSetWhitelistMode-dynamic'>UserCommands#roomSetWhitelistMode</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomUserJoined-dynamic'>
+      #
+(void)
+<b>roomUserJoined</b><span>(roomName, userName)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates that an another user has joined a room.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Rooms name. </span>
+    </li>
+    <li>
+      <span class='name'>userName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserName. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomJoin-dynamic'>UserCommands#roomJoin</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomUserLeft-dynamic'>
+      #
+(void)
+<b>roomUserLeft</b><span>(roomName, userName)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates that an another user has left a room.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Rooms name. </span>
+    </li>
+    <li>
+      <span class='name'>userName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserName. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomLeave-dynamic'>UserCommands#roomLeave</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='socketConnectEcho-dynamic'>
+      #
+(void)
+<b>socketConnectEcho</b><span>(id, nconnected)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates a connection of an another socket with the same user.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Socket id. </span>
+    </li>
+    <li>
+      <span class='name'>nconnected</span>
+      <span class='type'>
+        (
+          <tt>Number</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Total number of users&#39;s sockets. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='socketDisconnectEcho-dynamic'>
+      #
+(void)
+<b>socketDisconnectEcho</b><span>(id, nconnected)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Indicates a disconnection of an another socket with the same user.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Socket id. </span>
+    </li>
+    <li>
+      <span class='name'>nconnected</span>
+      <span class='type'>
+        (
+          <tt>Number</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Total number of users&#39;s sockets. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='systemMessage-dynamic'>
+      #
+(void)
+<b>systemMessage</b><span>(data)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Custom message from a server or from an another socket of the same user.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>data</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Arbitrary data. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  By
+  <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
+    Codo
+  </a>
+  2.1.0
+  &#10034;
+  Press H to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/netzpirat' target='_parent'>@netzpirat</a>
+  &#10034;
+  <a href='http://twitter.com/_inossidabile' target='_parent'>@_inossidabile</a>
+</div>
+<iframe id='search_frame'></iframe>
+<div id='fuzzySearch'>
+  <input type='text'>
+  <ol></ol>
+</div>
+<div id='help'>
+  <p>
+    Quickly fuzzy find classes, mixins, methods, file:
+  </p>
+  <ul>
+    <li>
+      <span>T</span>
+      Open fuzzy finder dialog
+    </li>
+  </ul>
+  <p>
+    Control the navigation frame:
+  </p>
+  <ul>
+    <li>
+      <span>L</span>
+      Toggle list view
+    </li>
+    <li>
+      <span>C</span>
+      Show class list
+    </li>
+    <li>
+      <span>I</span>
+      Show mixin list
+    </li>
+    <li>
+      <span>F</span>
+      Show file list
+    </li>
+    <li>
+      <span>M</span>
+      Show method list
+    </li>
+    <li>
+      <span>E</span>
+      Show extras list
+    </li>
+  </ul>
+  <p>
+    You can focus and blur the search input:
+  </p>
+  <ul>
+    <li>
+      <span>S</span>
+      Focus search input
+    </li>
+    <li>
+      <span>Esc</span>
+      Blur search input
+    </li>
+  </ul>
+</div>
+  </body>
+</html>

@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>Chat service Documentation</title>
+  <script src='../javascript/application.js'></script>
+  <script src='../javascript/search.js'></script>
+  <link rel='stylesheet' href='../stylesheets/application.css' type='text/css'>
+</head>
+  <body>
+    <div id='base' data-path='../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../extra/README.md.html' title='Chat service'>
+      Chat service
+    </a>
+    &raquo;
+    <a href='../alphabetical_index.html' title='Index'>
+      Index
+    </a>
+    &raquo;
+    <span class='title'>UserCommands</span>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        UserCommands
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>lib&#47;ChatService.coffee</td>
+        </tr>
+      </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    This class describes socket.io server incoming messages, not actual methods. 
+  </div>
+  <p>List of commands that are sent from a client. Result is sent back as
+a socket.io ack with the standard (error, data) callback parameters
+format. Error is ether a String or an Object, depending on
+<a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>useRawErrorObjects</code> option. See
+<a href='../class/ChatServiceError.html'>ChatServiceError</a> for an errors list. Some messages will echo
+<a href='../class/ServerMessages.html'>ServerMessages</a> to other user&#39;s sockets or trigger sending
+<a href='../class/ServerMessages.html'>ServerMessages</a> to other users. It is also possible to run this
+commands server-side using <a href='../mixin/ServiceAPI.html#execUserCommand-'>ServiceAPI~execUserCommand</a>.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      Socket.io client example
+    </h4>
+    <pre><code class='coffeescript'>socket = ioClient.connect url, params
+socket.on &#39;loginConfirmed&#39;, (userName, authData) -&gt;
+  socket.emit &#39;roomJoin&#39;, roomName, (error, data) -&gt;
+    # this is a socket.io ack waiting callback. socket is joined
+    # the room, or an error occurred, we get here only when the
+    # server has finished roomJoin command processing.</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#directAddToList-dynamic'>
+        #
+(void)
+<b>directAddToList</b><span>(listName, userNames, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Adds userNames to user&#39;s direct messaging blacklist or whitelist. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#directGetAccessList-dynamic'>
+        #
+(void)
+<b>directGetAccessList</b><span>(listName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Gets direct messaging blacklist or whitelist. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#directGetWhitelistMode-dynamic'>
+        #
+(void)
+<b>directGetWhitelistMode</b><span>(cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Gets direct messaging whitelist only mode. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#directMessage-dynamic'>
+        #
+(void)
+<b>directMessage</b><span>(toUser, msg, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      <p>Sends <a href='../class/ServerMessages.html#directMessage-dynamic'>ServerMessages#directMessage</a> to an another user, if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>enableDirectMessages</code> option is
+true.</p>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#directRemoveFromList-dynamic'>
+        #
+(void)
+<b>directRemoveFromList</b><span>(listName, userNames, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Removes userNames from user&#39;s direct messaging blacklist or whitelist. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#directSetWhitelistMode-dynamic'>
+        #
+(void)
+<b>directSetWhitelistMode</b><span>(mode, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Sets direct messaging whitelist only mode. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#disconnect-dynamic'>
+        #
+(void)
+<b>disconnect</b><span>(reason, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Emitted when a socket disconnects from the server. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#listOwnSockets-dynamic'>
+        #
+(void)
+<b>listOwnSockets</b><span>(cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Gets a list of all sockets with corresponding joined rooms. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomAddToList-dynamic'>
+        #
+(void)
+<b>roomAddToList</b><span>(roomName, listName, userNames, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Adds userNames to room&#39;s blacklist, adminlist and whitelist. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomCreate-dynamic'>
+        #
+(void)
+<b>roomCreate</b><span>(roomName, mode, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Creates a room if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>enableRoomsManagement</code> option is true.
+
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomDelete-dynamic'>
+        #
+(void)
+<b>roomDelete</b><span>(roomName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      <p>Deletes a room if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>enableRoomsManagement</code> is true and the user has an owner
+status.</p>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomGetAccessList-dynamic'>
+        #
+(void)
+<b>roomGetAccessList</b><span>(roomName, listName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Gets room messaging userlist, blacklist, adminlist and whitelist. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomGetOwner-dynamic'>
+        #
+(void)
+<b>roomGetOwner</b><span>(roomName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Gets the room owner. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomGetWhitelistMode-dynamic'>
+        #
+(void)
+<b>roomGetWhitelistMode</b><span>(roomName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Gets the room messaging whitelist only mode. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomRecentHistory-dynamic'>
+        #
+(void)
+<b>roomRecentHistory</b><span>(roomName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Gets latest room messages. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomHistoryGet-dynamic'>
+        #
+(void)
+<b>roomHistoryGet</b><span>(roomName, id, limit, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Returns messages that were sent after a message with the specified id.
+
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomHistoryInfo-dynamic'>
+        #
+(void)
+<b>roomHistoryInfo</b><span>(roomName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Gets the the room history information. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomJoin-dynamic'>
+        #
+(void)
+<b>roomJoin</b><span>(roomName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Joins room, an user must join the room to receive messages or execute room commands.
+
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomLeave-dynamic'>
+        #
+(void)
+<b>roomLeave</b><span>(roomName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Leaves room. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomMessage-dynamic'>
+        #
+(void)
+<b>roomMessage</b><span>(roomName, msg, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Sends <a href='../class/ServerMessages.html#roomMessage-dynamic'>ServerMessages#roomMessage</a> to all room users. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomRemoveFromList-dynamic'>
+        #
+(void)
+<b>roomRemoveFromList</b><span>(roomName, listName, userNames, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Removes userNames from room&#39;s blacklist, adminlist and whitelist.
+
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomSetWhitelistMode-dynamic'>
+        #
+(void)
+<b>roomSetWhitelistMode</b><span>(roomName, mode, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Sets room messaging whitelist only mode. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#roomUserSeen-dynamic'>
+        #
+(void)
+<b>roomUserSeen</b><span>(roomName, userName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Send user&#39;s joined state and last state change timestamp. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#systemMessage-dynamic'>
+        #
+(void)
+<b>systemMessage</b><span>(data, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Send data to other connected users&#39;s sockets. 
+    </span>
+  </li>
+</ul>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='directAddToList-dynamic'>
+      #
+(void)
+<b>directAddToList</b><span>(listName, userNames, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Adds userNames to user&#39;s direct messaging blacklist or whitelist.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>listName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>&#39;blacklist&#39; or &#39;whitelist&#39;. </span>
+    </li>
+    <li>
+      <span class='name'>userNames</span>
+      <span class='type'>
+        (
+          <tt>Array&lt;String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserNames to add to the list. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Send ack with an error or an empty data. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='directGetAccessList-dynamic'>
+      #
+(void)
+<b>directGetAccessList</b><span>(listName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Gets direct messaging blacklist or whitelist.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>listName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>&#39;blacklist&#39; or &#39;whitelist&#39;. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Array&lt;String&gt;&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or the requested list. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='directGetWhitelistMode-dynamic'>
+      #
+(void)
+<b>directGetWhitelistMode</b><span>(cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Gets direct messaging whitelist only mode. If it is true then
+direct messages are allowed only for users that are in the
+whitelist. Otherwise direct messages are accepted from all
+users that are not in the blacklist.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Boolean&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or the user&#39;s whitelist only mode. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='directMessage-dynamic'>
+      #
+(void)
+<b>directMessage</b><span>(toUser, msg, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Sends <a href='../class/ServerMessages.html#directMessage-dynamic'>ServerMessages#directMessage</a> to an another user, if
+<a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>enableDirectMessages</code> option is
+true. Also sends <a href='../class/ServerMessages.html#directMessageEcho-dynamic'>ServerMessages#directMessageEcho</a> to other
+senders&#39;s sockets.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>toUser</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Message receiver. </span>
+    </li>
+    <li>
+      <span class='name'>msg</span>
+      <span class='type'>
+        (
+          <tt>Object&lt;textMessage : String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Message. Other fields can be used if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>directMessagesChecker</code> hook is set. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Object&lt;textMessage:String, timestamp:Number, author:String&gt;&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or a processed message. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/ServerMessages.html#directMessage-dynamic'>ServerMessages#directMessage</a>
+    </li>
+    <li>
+      <a href='../class/ServerMessages.html#directMessageEcho-dynamic'>ServerMessages#directMessageEcho</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='directRemoveFromList-dynamic'>
+      #
+(void)
+<b>directRemoveFromList</b><span>(listName, userNames, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Removes userNames from user&#39;s direct messaging blacklist or whitelist.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>listName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>&#39;blacklist&#39; or &#39;whitelist&#39;. </span>
+    </li>
+    <li>
+      <span class='name'>userNames</span>
+      <span class='type'>
+        (
+          <tt>Array&lt;String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>User names to remove from the list. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an empty data. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='directSetWhitelistMode-dynamic'>
+      #
+(void)
+<b>directSetWhitelistMode</b><span>(mode, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Sets direct messaging whitelist only mode.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>mode</span>
+      <span class='type'>
+        (
+          <tt>Boolean</tt>
+        )
+      </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an empty data. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#directGetWhitelistMode-dynamic'>UserCommands#directGetWhitelistMode</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='disconnect-dynamic'>
+      #
+(void)
+<b>disconnect</b><span>(reason, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    Can&#39;t be send by a client as a Socket.io message, use socket.disconnect() instead. 
+  </div>
+  <p>Emitted when a socket disconnects from the server.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>reason</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Reason. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Callback. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='listOwnSockets-dynamic'>
+      #
+(void)
+<b>listOwnSockets</b><span>(cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Gets a list of all sockets with corresponding joined rooms. This
+returns information about all user&#39;s sockets.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Object&lt;Hash&gt;&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an object, where sockets are keys and arrays of rooms are values. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/ServerMessages.html#roomJoinedEcho-dynamic'>ServerMessages#roomJoinedEcho</a>
+    </li>
+    <li>
+      <a href='../class/ServerMessages.html#roomLeftEcho-dynamic'>ServerMessages#roomLeftEcho</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomAddToList-dynamic'>
+      #
+(void)
+<b>roomAddToList</b><span>(roomName, listName, userNames, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Adds userNames to room&#39;s blacklist, adminlist and whitelist. Also
+removes users that have lost an access permission in the result of
+an operation, sending <a href='../class/ServerMessages.html#roomAccessRemoved-dynamic'>ServerMessages#roomAccessRemoved</a>. Also
+sends <a href='../class/ServerMessages.html#roomAccessListAdded-dynamic'>ServerMessages#roomAccessListAdded</a> to all room users if
+<a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>enableAccessListsUpdates</code> option is
+true.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>listName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>&#39;blacklist&#39;, &#39;adminlist&#39; or &#39;whitelist&#39;. </span>
+    </li>
+    <li>
+      <span class='name'>userNames</span>
+      <span class='type'>
+        (
+          <tt>Array&lt;String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>User names to add to the list. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an empty data. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/ServerMessages.html#roomAccessRemoved-dynamic'>ServerMessages#roomAccessRemoved</a>
+    </li>
+    <li>
+      <a href='../class/ServerMessages.html#roomAccessListAdded-dynamic'>ServerMessages#roomAccessListAdded</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomCreate-dynamic'>
+      #
+(void)
+<b>roomCreate</b><span>(roomName, mode, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Creates a room if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a>
+<code>enableRoomsManagement</code> option is true.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Rooms name. </span>
+    </li>
+    <li>
+      <span class='name'>mode</span>
+      <span class='type'>
+        (
+          <tt>bool</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room mode. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an empty data. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomDelete-dynamic'>
+      #
+(void)
+<b>roomDelete</b><span>(roomName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Deletes a room if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a>
+<code>enableRoomsManagement</code> is true and the user has an owner
+status. Sends <a href='../class/ServerMessages.html#roomAccessRemoved-dynamic'>ServerMessages#roomAccessRemoved</a> to all room
+users.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Rooms name. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an empty data. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomGetAccessList-dynamic'>
+      #
+(void)
+<b>roomGetAccessList</b><span>(roomName, listName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Gets room messaging userlist, blacklist, adminlist and whitelist.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>listName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>&#39;userlist&#39;, &#39;blacklist&#39;, &#39;adminlist&#39;, &#39;whitelist&#39;. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Array&lt;String&gt;&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or the requested list. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomGetOwner-dynamic'>
+      #
+(void)
+<b>roomGetOwner</b><span>(roomName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Gets the room owner.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or the room owner. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomGetWhitelistMode-dynamic'>
+      #
+(void)
+<b>roomGetWhitelistMode</b><span>(roomName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Gets the room messaging whitelist only mode. If it is true, then
+join is allowed only for users that are in the
+whitelist. Otherwise all users that are not in the blacklist can
+join.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Boolean&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or whitelist only mode. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomRecentHistory-dynamic'>
+      #
+(void)
+<b>roomRecentHistory</b><span>(roomName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Gets latest room messages. The maximum size is set by
+<a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>historyMaxGetMessages</code> option. Messages
+are sorted as newest first.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Array&lt;Object&gt;&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or array of messages. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomMessage-dynamic'>UserCommands#roomMessage</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomHistoryGet-dynamic'>
+      #
+(void)
+<b>roomHistoryGet</b><span>(roomName, id, limit, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Returns messages that were sent after a message with the specified
+id. The returned number of messages is limited by the limit
+parameter. The maximum limit is bounded by
+<a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>historyMaxGetMessages</code> option. If the
+specified id was deleted due to history limit, it returns messages
+starting from the oldest available. Messages are sorted as newest
+first.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>id</span>
+      <span class='type'>
+        (
+          <tt>Number</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Starting message id. </span>
+    </li>
+    <li>
+      <span class='name'>limit</span>
+      <span class='type'>
+        (
+          <tt>Number</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Maximum number of messages to return. The maximum number is limited by <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>historyMaxGetMessages</code> option. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Array&lt;Object&gt;&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or array of messages. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='UserCommands#roomHistoryLastId'>UserCommands#roomHistoryLastId</a>
+    </li>
+    <li>
+      <a href='../class/UserCommands.html#roomMessage-dynamic'>UserCommands#roomMessage</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomHistoryInfo-dynamic'>
+      #
+(void)
+<b>roomHistoryInfo</b><span>(roomName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Gets the the room history information.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Object&lt;historyMaxGetMessages:Number, historyMaxSize:Number, historySize:Number, lastMessageId:Number&gt;&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an object contains the room history information. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomHistoryGet-dynamic'>UserCommands#roomHistoryGet</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomJoin-dynamic'>
+      #
+(void)
+<b>roomJoin</b><span>(roomName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Joins room, an user must join the room to receive messages or
+execute room commands. Sends <a href='../class/ServerMessages.html#roomJoinedEcho-dynamic'>ServerMessages#roomJoinedEcho</a> to other
+user&#39;s sockets. Also sends <a href='../class/ServerMessages.html#roomUserJoined-dynamic'>ServerMessages#roomUserJoined</a> to other
+room users if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>enableUserlistUpdates</code> option is
+true.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Number&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or a number of joined user&#39;s sockets. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/ServerMessages.html#roomJoinedEcho-dynamic'>ServerMessages#roomJoinedEcho</a>
+    </li>
+    <li>
+      <a href='../class/ServerMessages.html#roomUserJoined-dynamic'>ServerMessages#roomUserJoined</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomLeave-dynamic'>
+      #
+(void)
+<b>roomLeave</b><span>(roomName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Leaves room. Sends <a href='../class/ServerMessages.html#roomLeftEcho-dynamic'>ServerMessages#roomLeftEcho</a> to other user&#39;s
+sockets. Also sends <a href='../class/ServerMessages.html#roomUserLeft-dynamic'>ServerMessages#roomUserLeft</a> to other room
+users if <a href='../class/ChatService.html'>ChatService</a> <code>enableUserlistUpdates</code> option is true.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Number&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or a number of joined user&#39;s sockets. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/ServerMessages.html#roomLeftEcho-dynamic'>ServerMessages#roomLeftEcho</a>
+    </li>
+    <li>
+      <a href='../class/ServerMessages.html#roomUserLeft-dynamic'>ServerMessages#roomUserLeft</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomMessage-dynamic'>
+      #
+(void)
+<b>roomMessage</b><span>(roomName, msg, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Sends <a href='../class/ServerMessages.html#roomMessage-dynamic'>ServerMessages#roomMessage</a> to all room users.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>msg</span>
+      <span class='type'>
+        (
+          <tt>Object&lt;textMessage : String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Message. Other fields can be used if <a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>roomMessagesChecker</code> hook is set. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Number&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or the message id. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/ServerMessages.html#roomMessage-dynamic'>ServerMessages#roomMessage</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomRemoveFromList-dynamic'>
+      #
+(void)
+<b>roomRemoveFromList</b><span>(roomName, listName, userNames, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Removes userNames from room&#39;s blacklist, adminlist and
+whitelist. Also removes users that have lost an access permission
+in the result of an operation, sending
+<a href='../class/ServerMessages.html#roomAccessRemoved-dynamic'>ServerMessages#roomAccessRemoved</a>. Also sends
+<a href='../class/ServerMessages.html#roomAccessListRemoved-dynamic'>ServerMessages#roomAccessListRemoved</a> to all room users if
+<a href='../class/ChatService.html#constructor-dynamic'>ChatService#constructor</a> <code>enableAccessListsUpdates</code> option is
+true.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>listName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>&#39;blacklist&#39;, &#39;adminlist&#39; or &#39;whitelist&#39;. </span>
+    </li>
+    <li>
+      <span class='name'>userNames</span>
+      <span class='type'>
+        (
+          <tt>Array&lt;String&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserNames to remove from the list. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an empty data. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/ServerMessages.html#roomAccessRemoved-dynamic'>ServerMessages#roomAccessRemoved</a>
+    </li>
+    <li>
+      <a href='../class/ServerMessages.html#roomAccessListRemoved-dynamic'>ServerMessages#roomAccessListRemoved</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomSetWhitelistMode-dynamic'>
+      #
+(void)
+<b>roomSetWhitelistMode</b><span>(roomName, mode, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Sets room messaging whitelist only mode. Also removes users that
+have lost an access permission in the result of an operation, sending
+<a href='../class/ServerMessages.html#roomAccessRemoved-dynamic'>ServerMessages#roomAccessRemoved</a>.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>mode</span>
+      <span class='type'>
+        (
+          <tt>Boolean</tt>
+        )
+      </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an empty data. </span>
+    </li>
+  </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../class/UserCommands.html#roomGetWhitelistMode-dynamic'>UserCommands#roomGetWhitelistMode</a>
+    </li>
+    <li>
+      <a href='../class/ServerMessages.html#roomAccessRemoved-dynamic'>ServerMessages#roomAccessRemoved</a>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='roomUserSeen-dynamic'>
+      #
+(void)
+<b>roomUserSeen</b><span>(roomName, userName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Send user&#39;s joined state and last state change timestamp.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Rooms name. </span>
+    </li>
+    <li>
+      <span class='name'>userName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>UserName. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, Object&lt;timestamp:Number, joined:Boolean&gt; &gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an object with a joined state and a state switch timestamp. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='systemMessage-dynamic'>
+      #
+(void)
+<b>systemMessage</b><span>(data, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Send data to other connected users&#39;s sockets. Or can be used with
+<a href='../mixin/ServiceAPI.html#execUserCommand-'>ServiceAPI~execUserCommand</a> and the null id to send data from a
+server to all users&#39;s sockets.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>data</span>
+      <span class='type'>
+        (
+          <tt>Object</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Arbitrary data. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Function&lt;error, null&gt;</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sends ack with an error or an empty data. </span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  By
+  <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
+    Codo
+  </a>
+  2.1.0
+  &#10034;
+  Press H to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/netzpirat' target='_parent'>@netzpirat</a>
+  &#10034;
+  <a href='http://twitter.com/_inossidabile' target='_parent'>@_inossidabile</a>
+</div>
+<iframe id='search_frame'></iframe>
+<div id='fuzzySearch'>
+  <input type='text'>
+  <ol></ol>
+</div>
+<div id='help'>
+  <p>
+    Quickly fuzzy find classes, mixins, methods, file:
+  </p>
+  <ul>
+    <li>
+      <span>T</span>
+      Open fuzzy finder dialog
+    </li>
+  </ul>
+  <p>
+    Control the navigation frame:
+  </p>
+  <ul>
+    <li>
+      <span>L</span>
+      Toggle list view
+    </li>
+    <li>
+      <span>C</span>
+      Show class list
+    </li>
+    <li>
+      <span>I</span>
+      Show mixin list
+    </li>
+    <li>
+      <span>F</span>
+      Show file list
+    </li>
+    <li>
+      <span>M</span>
+      Show method list
+    </li>
+    <li>
+      <span>E</span>
+      Show extras list
+    </li>
+  </ul>
+  <p>
+    You can focus and blur the search input:
+  </p>
+  <ul>
+    <li>
+      <span>S</span>
+      Focus search input
+    </li>
+    <li>
+      <span>Esc</span>
+      Blur search input
+    </li>
+  </ul>
+</div>
+  </body>
+</html>

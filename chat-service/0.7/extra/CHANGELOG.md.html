@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>Chat service Documentation</title>
+  <script src='../javascript/application.js'></script>
+  <script src='../javascript/search.js'></script>
+  <link rel='stylesheet' href='../stylesheets/application.css' type='text/css'>
+</head>
+  <body>
+    <div id='base' data-path='../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../extra/README.md.html' title='Chat service'>
+      Chat service
+    </a>
+    &raquo;
+    <a href='../alphabetical_index.html' title='Index'>
+      Index
+    </a>
+    &raquo;
+    <span class='title'>CHANGELOG.md</span>
+  </div>
+</div>
+    <div id='content'>
+      <nav class='toc'>
+        <p class='title'>
+          <a class='hide_toc' href='#'>
+            <strong>Table of Contents</strong>
+          </a>
+          <small>
+            (<a class='float_toc' href='#'>left</a>)
+          </small>
+        </p>
+      </nav>
+      <div id='filecontents'>
+        <h3 id="0-7-0-unreleased-">0.7.0 (unreleased)</h3>
+<ul>
+<li>Added ServiceAPI for scripting.</li>
+<li>Added hooks for checking custom content in message objects.</li>
+<li>Added listOwnSockets command.</li>
+<li>Added redis socket.io adapter dependency.</li>
+<li>Added roomGetOwner command.</li>
+<li>Added roomHistoryGet and roomHistoryInfo commands.</li>
+<li>Added roomUserSeen command.</li>
+<li>Added socketConnectEcho and socketDisconnectEcho messages.</li>
+<li>Added systemMessage command.</li>
+<li>Changed Redis schema.</li>
+<li>Changed adminlist to accessList.</li>
+<li>Changed auth hook to middleware.</li>
+<li>Changed chat constructor options.</li>
+<li>Changed global rooms history limit to a per-room value.</li>
+<li>Changed hooks API.</li>
+<li>Changed internal APIs (full rewrite, use promises now).</li>
+<li>Changed module export.</li>
+<li>Changed node.js minimum version to 0.12.</li>
+<li>Changed room permissions.</li>
+<li>Changed roomHistory to roomRecentHistory.</li>
+<li>Changed roomJoinedEcho and roomLeftEcho ServerMessages.</li>
+<li>Changed roomMessage and directMessage server messages.</li>
+<li>Changed roomMessage command.</li>
+<li>Cleanup tests, suit split.</li>
+<li>Fixed commands arguments validation.</li>
+<li>Removed listRooms command.</li>
+</ul>
+<h3 id="0-6-1-2016-02-01-">0.6.1 (2016/02/01)</h3>
+<ul>
+<li>Update dependencies.</li>
+<li>Lock socket-io minor version.</li>
+</ul>
+<h3 id="0-6-0-2015-12-05-">0.6.0 (2015/12/05)</h3>
+<ul>
+<li>Don&#39;t join/leave all user sockets from rooms at server side.</li>
+<li>Rename enableAdminListUpdates to enableAdminlistUpdates.</li>
+<li>Changed onConnect hook arguments.</li>
+<li>Add njoined data in related server messages.</li>
+<li>Fix user remove from room bugs.</li>
+<li>Fix Redis states cleanup functions.</li>
+<li>Include frontend example application.</li>
+</ul>
+<h3 id="0-5-1-2015-10-26-">0.5.1 (2015/10/26)</h3>
+<ul>
+<li>Security: Fix type error throwing on primitive message objects.</li>
+</ul>
+<h3 id="0-5-0-2015-10-07-">0.5.0 (2015/10/07)</h3>
+<ul>
+<li>Allow room adminlist changing only for owner.</li>
+<li>Dependencies update.</li>
+<li>Message hooks fix/simplification.</li>
+<li>Pass state options.</li>
+<li>Use locks in redis state.</li>
+<li>Wait for clients disconnection in close function.</li>
+</ul>
+<h3 id="0-4-0-2015-09-02-">0.4.0 (2015/09/02)</h3>
+<ul>
+<li>Redis state.</li>
+<li>Room listing changed.</li>
+<li>Before and After hooks changed.</li>
+<li>More unit tests.</li>
+</ul>
+<h3 id="0-3-0-2015-08-19-">0.3.0 (2015/08/19)</h3>
+<ul>
+<li>Some documentation.</li>
+<li>Room join/leave server messages renamed.</li>
+</ul>
+<h3 id="0-2-0-2015-08-13-">0.2.0 (2015/08/13)</h3>
+<ul>
+<li>New socket.io messages reply format (using ack).</li>
+<li>State store API.</li>
+</ul>
+<h3 id="0-1-0-2015-07-21-">0.1.0 (2015/07/21)</h3>
+<ul>
+<li>Initial release.</li>
+</ul>
+
+      </div>
+    </div>
+    <div id='footer'>
+  By
+  <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
+    Codo
+  </a>
+  2.1.0
+  &#10034;
+  Press H to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/netzpirat' target='_parent'>@netzpirat</a>
+  &#10034;
+  <a href='http://twitter.com/_inossidabile' target='_parent'>@_inossidabile</a>
+</div>
+<iframe id='search_frame'></iframe>
+<div id='fuzzySearch'>
+  <input type='text'>
+  <ol></ol>
+</div>
+<div id='help'>
+  <p>
+    Quickly fuzzy find classes, mixins, methods, file:
+  </p>
+  <ul>
+    <li>
+      <span>T</span>
+      Open fuzzy finder dialog
+    </li>
+  </ul>
+  <p>
+    Control the navigation frame:
+  </p>
+  <ul>
+    <li>
+      <span>L</span>
+      Toggle list view
+    </li>
+    <li>
+      <span>C</span>
+      Show class list
+    </li>
+    <li>
+      <span>I</span>
+      Show mixin list
+    </li>
+    <li>
+      <span>F</span>
+      Show file list
+    </li>
+    <li>
+      <span>M</span>
+      Show method list
+    </li>
+    <li>
+      <span>E</span>
+      Show extras list
+    </li>
+  </ul>
+  <p>
+    You can focus and blur the search input:
+  </p>
+  <ul>
+    <li>
+      <span>S</span>
+      Focus search input
+    </li>
+    <li>
+      <span>Esc</span>
+      Blur search input
+    </li>
+  </ul>
+</div>
+  </body>
+</html>

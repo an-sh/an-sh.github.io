@@ -55,20 +55,21 @@ permissions management API.</p></li>
 <li><p>Seamless support of multiple socket connections for a single user,
 including a reasonable amount of user&#39;s action notifications from
 other sockets.</p></li>
-<li><p>Written as a microservice, using Redis as a state store allows easy
-service scaling. Also supports Redis in cluster configurations as a
-store.</p></li>
+<li><p>Written as a stateless microservice, using Redis as a state store,
+can be easily scaled across many machines. Also supports Redis in
+cluster configurations as a store.</p></li>
 <li><p>Extensive customisation support. Custom functionality can be added
-via hooks before/after any client message (UserCommand). And client
-messages handlers can be invoked server side as simple functions.</p></li>
+via hooks before/after any client message (command). And client
+messages (commands) handlers can be invoked server side as simple
+functions.</p></li>
 <li><p>Simple networking using only socket.io library with JSON
 messages. Just a socket.io client implementation is required, making
 possible using the same server for web (SPA), mobile and desktop
 clients.</p></li>
 </ul>
-<h3 id="basic-usage">Basic usage</h3><p>Here is a very basic example.</p><p>On a server, lets define the user authentication function, the service
-is relying on an extern auth function. A user just needs to pass an
-auth check, no explicit user adding step is required.</p><pre><code class="lang-javascript">function onConnect(service, id, cb) {
+<h3 id="tutorial">Tutorial</h3><p>On a server, lets define the user authentication function, as the
+service is relying on an extern auth function. A user just needs to
+pass an auth check, no explicit user adding step is required.</p><pre><code class="lang-javascript">function onConnect(service, id, cb) {
   // Assuming that auth data is passed in a query string.
   let socket = service.nsp.connected[id];
   let query = socket.handshake.query;
@@ -116,9 +117,17 @@ socket.on(&#39;loginRejected&#39;, (error) =&gt; {
   // Auth error handler.
 });
 </code></pre>
-<h3 id="frontend-example">Frontend example</h3><p>An angular single page chat application example is in <code>example</code>
-directory. From this directory run <code>npm install &amp;&amp; gulp &amp;&amp; bin/www</code> to
-build the application and start a server (by default on port 3000).</p><p><img src="http://an-sh.github.io/chat-service/example.png" alt="Example" title="Example"></p><h3 id="documentation">Documentation</h3><p>Is available online at <a href="http://an-sh.github.io/chat-service/0.7/">gitpages</a>.</p><p>Run <code>npm install -g codo</code> and <code>codo</code> to generate documentation.</p><h3 id="license">License</h3><p>MIT</p>
+<h3 id="frontend-example">Frontend example</h3><p>An angular single page chat application with basic features
+demonstration is in <code>example</code> directory. From this directory run <code>npm
+install &amp;&amp; gulp &amp;&amp; bin/www</code> to build the application and start a
+server (by default on port 3000).</p><p><img src="http://an-sh.github.io/chat-service/example.png" alt="Example" title="Example"></p><h3 id="documentation">Documentation</h3><p>Is available online at <a href="http://an-sh.github.io/chat-service/0.7/">gitpages</a>.</p><ul>
+<li><p><code>ServerMessages</code> class describes socket.io messages that are sent
+from the server to a client.</p></li>
+<li><p><code>UserCommands</code> class describes socket.io messages that client sends to
+a server and receives reply as a socket.io ack.</p></li>
+<li><p><code>ChatService</code> class is the server constructor, describes options and
+customisation hooks.</p></li>
+</ul><p>Run <code>npm install -g codo</code> and <code>codo</code> to generate local documentation.</p><h3 id="license">License</h3><p>MIT</p>
       </div>
     </div>
     <div id='footer'>

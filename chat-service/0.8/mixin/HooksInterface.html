@@ -47,7 +47,7 @@ object that contains any of the described hooks.</p>
     <span class='signature'>
       <a href='#onConnect-'>
         ~
-(Promise&lt;Array&gt;)
+(Promise&lt;Array or String&gt;)
 <b>onConnect</b><span>(server, id, cb)</span>
       </a>
     </span>
@@ -137,7 +137,7 @@ object that contains any of the described hooks.</p>
   <div class='method_details'>
     <p class='signature' id='onConnect-'>
       ~
-(Promise&lt;Array&gt;)
+(Promise&lt;Array or String&gt;)
 <b>onConnect</b><span>(server, id, cb)</span>
       <br>
     </p>
@@ -183,10 +183,10 @@ object that contains any of the described hooks.</p>
     <li>
       <span class='type'></span>
       (
-        <tt>Promise&lt;Array&gt;</tt>
+        <tt>Promise&lt;Array or String&gt;</tt>
       )
       &mdash;
-      <span class='desc'>Returns an array with a login string (user name) and an optional auth data object. User name and auth data are send back with a <a href='../class/ServerMessages.html#loginConfirmed-dynamic'>ServerMessages#loginConfirmed</a> message. Error is sent as a <a href='../class/ServerMessages.html#loginRejected-dynamic'>ServerMessages#loginRejected</a> message. </span>
+      <span class='desc'>Resolves either a login string (user name) or an array with a login string and an optional auth data object. User name and auth data are send back with a <a href='../class/ServerMessages.html#loginConfirmed-dynamic'>ServerMessages#loginConfirmed</a> message. Error is sent as a <a href='../class/ServerMessages.html#loginRejected-dynamic'>ServerMessages#loginRejected</a> message. </span>
     </li>
   </ul>
 </div>

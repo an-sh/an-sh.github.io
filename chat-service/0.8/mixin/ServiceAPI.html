@@ -92,7 +92,7 @@
       </a>
     </span>
     <span class='desc'>
-      Checks user existence, returns false on errors. 
+      Checks user existence. 
     </span>
   </li>
   <li>
@@ -105,6 +105,18 @@
     </span>
     <span class='desc'>
       Checks for a name existence in an user list. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#hasDirectAccess-'>
+        ~
+(Promise&lt;Boolean&gt;)
+<b>hasDirectAccess</b><span>(recipient, sender, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Checks for a direct messaging permission. 
     </span>
   </li>
   <li>
@@ -152,7 +164,7 @@
       </a>
     </span>
     <span class='desc'>
-      Checks room existence, returns false on errors. 
+      Checks room existence. 
     </span>
   </li>
   <li>
@@ -165,6 +177,18 @@
     </span>
     <span class='desc'>
       Checks for a name existence in a room list. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#hasRoomAccess-'>
+        ~
+(Promise&lt;Boolean&gt;)
+<b>hasRoomAccess</b><span>(roomName, userName, cb)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Checks for a room access permission. 
     </span>
   </li>
   <li>
@@ -438,7 +462,7 @@ sockets.</p>
       <br>
     </p>
     <div class='docstring'>
-  <p>Checks user existence, returns false on errors.</p>
+  <p>Checks user existence.</p>
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -515,6 +539,59 @@ sockets.</p>
       </span>
       &mdash;
       <span class='desc'>List element. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Callback</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Optional callback. </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      <tt>Promise&lt;Boolean&gt;</tt>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='hasDirectAccess-'>
+      ~
+(Promise&lt;Boolean&gt;)
+<b>hasDirectAccess</b><span>(recipient, sender, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Checks for a direct messaging permission.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>recipient</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Recipient name. </span>
+    </li>
+    <li>
+      <span class='name'>sender</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Sender name. </span>
     </li>
     <li>
       <span class='name'>cb</span>
@@ -733,7 +810,7 @@ asynchronous, returns without waiting for the completion.</p>
       <br>
     </p>
     <div class='docstring'>
-  <p>Checks room existence, returns false on errors.</p>
+  <p>Checks room existence.</p>
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -810,6 +887,59 @@ asynchronous, returns without waiting for the completion.</p>
       </span>
       &mdash;
       <span class='desc'>List element. </span>
+    </li>
+    <li>
+      <span class='name'>cb</span>
+      <span class='type'>
+        (
+          <tt>Callback</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Optional callback. </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      <tt>Promise&lt;Boolean&gt;</tt>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='hasRoomAccess-'>
+      ~
+(Promise&lt;Boolean&gt;)
+<b>hasRoomAccess</b><span>(roomName, userName, cb)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Checks for a room access permission.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>roomName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>Room name. </span>
+    </li>
+    <li>
+      <span class='name'>userName</span>
+      <span class='type'>
+        (
+          <tt>String</tt>
+        )
+      </span>
+      &mdash;
+      <span class='desc'>User name. </span>
     </li>
     <li>
       <span class='name'>cb</span>

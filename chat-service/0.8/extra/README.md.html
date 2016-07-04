@@ -78,7 +78,7 @@ auth check, no explicit user adding step is required.</p><pre><code class="lang-
   // Check query data.
   // ...
   // Return a promise that resolves with a login string.
-  Promise.resolve(userName)
+  return Promise.resolve(userName)
 }
 </code></pre><p>Creating a server is a simple object instantiation. <strong>Note:</strong> that a
 <code>close</code> method must be called to correctly shutdown a service (if

@@ -41,7 +41,7 @@
 <a href="https://david-dm.org/an-sh/chat-service"><img src="https://david-dm.org/an-sh/chat-service.svg" alt="Dependency Status"></a></p><p>Messaging service designed to handle a vast variety of use cases that
 are fit into a chat-like pattern, including exchanging data in
 collaborative applications, logging with realtime updates, or a full
-protocol/API tunnelling for IoT devices.</p><h3 id="features">Features</h3>
+protocol/API tunnelling for IoT devices.</p><h2 id="features">Features</h2>
 <ul>
 <li><p>Reliable room messaging using a server side history storage and a
 synchronisation API.</p></li>
@@ -68,10 +68,10 @@ functions.</p></li>
 required, making it possible to use the same server for web (SPA),
 mobile and desktop clients.</p></li>
 </ul>
-<h3 id="tutorial">Tutorial</h3><p>On a server, define a socket connection hook, as the service is
+<h2 id="tutorial">Tutorial</h2><p>On a server, define a socket connection hook, as the service is
 relying on an extern auth implementation. A user just needs to pass an
 auth check, no explicit user adding step is required.</p><pre><code class="lang-javascript">function onConnect(service, id) {
-  // Get socket object using id.
+  // Get socket object by id, assuming socket.io transport.
   let socket = service.nsp.connected[id]
   // Assuming that auth data is passed in a query string.
   let query = socket.handshake.query
@@ -81,9 +81,8 @@ auth check, no explicit user adding step is required.</p><pre><code class="lang-
   return Promise.resolve(userName)
 }
 </code></pre><p>Creating a server is a simple object instantiation. <strong>Note:</strong> that a
-<code>close</code> method must be called to correctly shutdown a service (if
-redis state is used). To fix an incorrect instance shutdown use
-<code>instanceRecovery</code> method.</p><pre><code class="lang-javascript">const port = 8000
+<code>close</code> method <em>must</em> be called to correctly shutdown a service (see
+<a href="#failures-recovery">Failures recovery</a>).</p><pre><code class="lang-javascript">const port = 8000
 const ChatService = require(&#39;chat-service&#39;)
 const chatService = new ChatService({port}, {onConnect})
 process.on(&#39;SIGINT&#39;, chatService.close().finally(() =&gt; process.exit()))
@@ -104,7 +103,7 @@ let socket = io.connect(url, params)
 socket.once(&#39;loginConfirmed&#39;, (userName) =&gt; {
   // Auth success.
   socket.on(&#39;roomMessage&#39;, (room, msg) =&gt; {
-    // Room message handler.
+    // Rooms messages handler (own messages are here too).
   })
   // Join room &#39;default&#39;.
   socket.emit(&#39;roomJoin&#39;, &#39;default&#39;, (error, data) =&gt; {
@@ -119,30 +118,94 @@ socket.once(&#39;loginRejected&#39;, (error) =&gt; {
   // Auth error handler.
 })
 </code></pre><p>Look in the API documentation for details about custom message
-formats, rooms management, rooms permission and users presence.</p><h3 id="api-documentation">API documentation</h3><p>Is available online at
+formats, rooms management, rooms permission and users presence.</p><h2 id="concepts-overview">Concepts overview</h2>
+<h3 id="user-multiple-connections">User multiple connections</h3><p>Service completely abstracts a connection concept from a user concept,
+so a single user can have more than one connection (including
+connections across different nodes). For the user presence the number
+of joined sockets must be just greater than zero. All APIs designed to
+work on the user level, handling seamlessly user&#39;s multiple
+connections.</p><p>Connections are completely independent, no additional client side
+support is required. But there are info messages and commands that can
+be used to get information about other user&#39;s connections. It makes
+possible to realise client-side sync patterns, like keeping all
+connections to be joined to the same rooms.</p><h3 id="room-permissions">Room permissions</h3><p>Each room has a permissions system. There is a single owner user, that
+has all administrator privileges and can assign users to the
+administrators group. Administrators can manage other users&#39; access
+permissions. Two modes are supported: blacklist and whitelist. After
+access lists/mode modifications, service automatically removes users
+that have lost an access permission.</p><p>If <code>enableRoomsManagement</code> options is enabled users can create rooms
+via <code>roomCreate</code> command. The creator of a room will be it&#39;s owner and
+can also delete it via <code>roomDelete</code> command.</p><h3 id="reliable-messaging-and-history-synchronisation">Reliable messaging and history synchronisation</h3><p>When a user sends a room message, in the ack callback the message <code>id</code>
+is returned. It means that the message has been saved in a store (in
+an append only circular buffer like structure). Room message ids are a
+sequence than increases by one for each successfully sent message in
+the room. A client can always check the last room message id via
+<code>roomHistoryInfo</code> command, and use <code>roomHistoryGet</code> command to get
+missing messages. Such approach ensures that a message can be
+received, unless it is deleted due to rotation.</p><h3 id="custom-messages-format">Custom messages format</h3><p>By default a client can send messages that are limited to just a
+<code>{textMessage: &#39;Some string&#39;}</code>. To enable custom messages format
+provide <code>directMessagesChecker</code> or <code>roomMessagesChecker</code> hooks. When a
+hook resolves, a message format is accepted. Messages can be arbitrary
+data with a few restrictions. The top level must be an <code>Object</code>,
+without <code>timestamp</code>, <code>author</code> or <code>id</code> fields (service will fill this
+fields before sending messages). The nested levels can include
+arbitrary data types (even binary), but no nested objects with a field
+<code>type</code> set to <code>&#39;Buffer&#39;</code> (used for binary data manipulations).</p><h3 id="integration-and-customisations">Integration and customisations</h3><p>Each user command supports before and after hook adding, and a client
+connection hook is supported too. Command and hooks are executed
+sequentially: before hook - command - after hook. Sequence termination
+in before hooks is supported. Clients can send additional command
+arguments, hooks can read them, and reply with additional arguments.</p><p>To execute an user command server side <code>execUserCommand</code> is
+provided. Also there are some more server side only methods provided
+by <code>ServiceAPI</code> and <code>Transport</code>. Look for some customisation cases in
+<a href="#customisation-examples">Customisation examples</a>.</p><h3 id="failures-recovery">Failures recovery</h3><p>Service keeps user presence and connection data in a store, that may
+be persistent or shared. So if an instance is shutdown incorrectly
+(without calling or waiting for <code>close</code> method to finish) or lost
+completely network connection to a store, presence data will become
+incorrect. To fix this case <code>instanceRecovery</code> method is provided.</p><p>Also there are more subtle cases regarding connection-dependant data
+consistency. Transport communication instances and store instances can
+experience various kind of network, software or hardware failures. In
+some edge cases (like operation on multiple users) such failures can
+cause inconsistencies (for the most part errors will be returned to
+the command&#39;s issuers). Such events are reported via instance events
+(see <code>ChatServiceEvents</code>), and data can be sync via <code>RecoveryAPI</code>
+methods.</p><h2 id="customisation-examples">Customisation examples</h2>
+<h3 id="anonymous-listeners">Anonymous listeners</h3><p>By default every user is assumed to have an unique login
+(userName). Instead of managing names generation, an integration with
+a separate transport can be used (or a multiplexed connection, for
+example an another socket.io namespace). Room messages can be
+forwarded from <code>roomMessage</code> after hook to a transport, that is
+accessible without a login. And vice versa some service commands can
+be executed by anonymous users via <code>execUserCommand</code> with bypassing
+permissions option turned on.</p><h3 id="explicit-multi-device-announcements">Explicit multi-device announcements</h3><p>By default there is no way for other users to know the number and
+types of user connections joined to a room. Such information can be
+passed, for example in a query string and then saved via a connection
+hook. The announcement can be made in <code>roomJoin</code> after hook, using
+directly transport <code>sendToChannel</code> method. Also additional information
+regarding joined devices types should be sent from <code>roomGetAccessList</code>
+after hook (when list name is equal to <code>&#39;userlist&#39;</code>).</p><h2 id="api-documentation">API documentation</h2><p>Is available online at
 <a href="https://an-sh.github.io/chat-service/0.8/">gitpages</a>.</p><ul>
 <li><p><code>ServerMessages</code> class describes socket.io messages that are sent
 from the server to a client.</p></li>
 <li><p><code>UserCommands</code> class describes socket.io messages that a client
-sends to a server and receives reply as a socket.io ack.</p></li>
+sends to a server and receives reply as a command ack.</p></li>
 <li><p><code>ChatService</code> class is the package exported object and a service
 instance constructor, describes options. It also contains mixin
 methods for using server side API.</p></li>
-</ul><p>Run <code>npm install -g codo</code> and <code>codo</code> to generate local documentation.</p><h3 id="frontend-example">Frontend example</h3><p>An Angular single page chat application with a basic features
+</ul><p>Run <code>npm install -g codo</code> and <code>codo</code> to generate local documentation.</p><h2 id="frontend-example">Frontend example</h2><p>An Angular single page chat application with a basic features
 demonstration is now in a separate
 <a href="https://github.com/an-sh/chat-service-frontend-angular1">repo</a>. You
 can also run this example as a cluster with several node
 processes. Check <code>README.md</code> file in that repository for more
-information.</p><h3 id="bug-reporting-and-debugging">Bug reporting and debugging</h3><p>In normal circumstances all errors that are returned to a service user
-(via commands ack, or <code>loginConfirmed</code>/<code>loginRejected</code> messages)
+information.</p><h2 id="debugging">Debugging</h2><p>In normal circumstances all errors that are returned to a service user
+(via commands ack, <code>loginConfirmed</code> or <code>loginRejected</code> messages)
 should be instances of <code>ChatServiceError</code>. All other errors mean a
 bug, or some failures in the service infrastructure. To enable debug
 logging of such errors use <code>export NODE_DEBUG=ChatService</code>. The
 library is using bluebird <code>^3.0.0</code> promises implementation, so to
 enable long stack traces use <code>export BLUEBIRD_DEBUG=1</code>. It is highly
 recommended to follow this conventions for extension hooks
-development.</p><p>If you encounter a bug in this package, please submit a bug report at
-github repo <a href="https://github.com/an-sh/chat-service/issues">issues</a>.</p><h3 id="license">License</h3><p>MIT</p>
+development.</p><h2 id="bug-reporting">Bug reporting</h2><p>If you encounter a bug in this package, please submit a bug report at
+github repo <a href="https://github.com/an-sh/chat-service/issues">issues</a>.</p><h2 id="license">License</h2><p>MIT</p>
       </div>
     </div>
     <div id='footer'>
@@ -150,7 +213,7 @@ github repo <a href="https://github.com/an-sh/chat-service/issues">issues</a>.</
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>
-  2.1.0
+  2.1.1
   &#10034;
   Press H to see the keyboard shortcuts
   &#10034;

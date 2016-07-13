@@ -47,7 +47,7 @@
     </h4>
     <pre><code class='coffeescript'>socket = io.connect url, params
 socket.once &#39;loginConfirmed&#39;, (userName) -&gt;
-  socket.on &#39;directMessage&#39;, (fromUser, msg) -&gt;
+  socket.on &#39;directMessage&#39;, (msg) -&gt;
     # just the same as any event. no reply is required.</code></pre>
   </div>
 </div>
@@ -289,16 +289,6 @@ but other fields can be used if <a href='../class/ChatService.html#constructor-d
 <div class='tags'>
   <h3>Parameters:</h3>
   <ul class='param'>
-    <li>
-      <span class='name'>fromUser</span>
-      <span class='type'>
-        (
-          <tt>String</tt>
-        )
-      </span>
-      &mdash;
-      <span class='desc'>Message sender. </span>
-    </li>
     <li>
       <span class='name'>msg</span>
       <span class='type'>

@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>config - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="chat-service.ChatService.html">ChatService</a><ul class='members'><li data-type='member'><a href="chat-service.ChatService.html#.ChatServiceError">ChatServiceError</a></li><li data-type='member'><a href="chat-service.ChatService.html#.SocketIOClusterBus">SocketIOClusterBus</a></li><li data-type='member'><a href="chat-service.ChatService.html#clusterBus">clusterBus</a></li><li data-type='member'><a href="chat-service.ChatService.html#instanceUID">instanceUID</a></li><li data-type='member'><a href="chat-service.ChatService.html#io">io</a></li><li data-type='member'><a href="chat-service.ChatService.html#nsp">nsp</a></li><li data-type='member'><a href="chat-service.ChatService.html#redis">redis</a></li><li data-type='member'><a href="chat-service.ChatService.html#transport">transport</a></li></ul><ul class='methods'><li data-type='method'><a href="chat-service.ChatService.html#checkArguments">checkArguments</a></li><li data-type='method'><a href="chat-service.ChatService.html#close">close</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="chat-service.html#.event:closed">closed</a></li><li><a href="chat-service.html#.event:lockTimeExceeded">lockTimeExceeded</a></li><li><a href="chat-service.html#.event:ready">ready</a></li><li><a href="chat-service.html#.event:storeConsistencyFailure">storeConsistencyFailure</a></li><li><a href="chat-service.html#.event:transportConsistencyFailure">transportConsistencyFailure</a></li></ul><h3>Namespaces</h3><ul><li><a href="chat-service.html">chat-service</a></li><li><a href="chat-service.config.html">config</a></li><li><a href="chat-service.hooks.html">hooks</a></li><li><a href="rpc.html">rpc</a></li><li><a href="rpc.clientRequests.html">clientRequests</a><ul class='methods'><li data-type='method'><a href="rpc.clientRequests.html#.directAddToList">directAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetAccessList">directGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetWhitelistMode">directGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directRemoveFromList">directRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directSetWhitelistMode">directSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.listOwnSockets">listOwnSockets</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomAddToList">roomAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomCreate">roomCreate</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomDelete">roomDelete</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetAccessList">roomGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetOwner">roomGetOwner</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetWhitelistMode">roomGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryGet">roomHistoryGet</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryInfo">roomHistoryInfo</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomJoin">roomJoin</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomLeave">roomLeave</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRecentHistory">roomRecentHistory</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRemoveFromList">roomRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomSetWhitelistMode">roomSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomUserSeen">roomUserSeen</a></li><li data-type='method'><a href="rpc.clientRequests.html#.systemMessage">systemMessage</a></li></ul></li><li><a href="rpc.datatypes.html">datatypes</a><ul class='members'><li data-type='member'><a href="rpc.datatypes.html#.codeToFormat">codeToFormat</a></li></ul></li><li><a href="rpc.serverNotifications.html">serverNotifications</a><ul class='methods'><li data-type='method'><a href="rpc.serverNotifications.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.directMessageEcho">directMessageEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginConfirmed">loginConfirmed</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginRejected">loginRejected</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListAdded">roomAccessListAdded</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListRemoved">roomAccessListRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessRemoved">roomAccessRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomJoinedEcho">roomJoinedEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomLeftEcho">roomLeftEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomModeChanged">roomModeChanged</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserJoined">roomUserJoined</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserLeft">roomUserLeft</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketConnectEcho">socketConnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketDisconnectEcho">socketDisconnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.systemMessage">systemMessage</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="chat-service.RecoveryAPI.html">RecoveryAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.RecoveryAPI.html#getInstanceHeartbeat">getInstanceHeartbeat</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#instanceRecovery">instanceRecovery</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#roomStateSync">roomStateSync</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#userStateSync">userStateSync</a></li></ul></li><li><a href="chat-service.ServiceAPI.html">ServiceAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.ServiceAPI.html#addRoom">addRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#addUser">addUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomHistoryMaxSize">changeRoomHistoryMaxSize</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomOwner">changeRoomOwner</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteRoom">deleteRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteUser">deleteUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#disconnectUserSockets">disconnectUserSockets</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#execUserCommand">execUserCommand</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasDirectAccess">hasDirectAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoom">hasRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoomAccess">hasRoomAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasUser">hasUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#roomHasInList">roomHasInList</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#userHasInList">userHasInList</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="chat-service.ExecInfo.html">ExecInfo</a></li><li><a href="chat-service.hooks.HooksInterface.html">HooksInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.directMessagesChecker">directMessagesChecker</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onClose">onClose</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onConnect">onConnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onDisconnect">onDisconnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onStart">onStart</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.roomMessagesChecker">roomMessagesChecker</a></li></ul></li><li><a href="chat-service.hooks.RequestsHooks.html">RequestsHooks</a></li><li><a href="chat-service.TransportInterface.html">TransportInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.TransportInterface.html#bindHandler">bindHandler</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#emitToChannel">emitToChannel</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getSocket">getSocket</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#sendToChannel">sendToChannel</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">config</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="chat-service.html">chat-service</a>.</span>
+        
+        config
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+            <div class="description"><p><a href="chat-service.ChatService.html"><code>chat-service.ChatService</code></a> options.</p></div>
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id=".options">options</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>port</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>8000</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Port number.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>enableAccessListsUpdates</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Enables <a href="rpc.serverNotifications.html#.roomModeChanged"><code>rpc.serverNotifications.roomModeChanged</code></a>, <a href="rpc.serverNotifications.html#.roomAccessListAdded"><code>rpc.serverNotifications.roomAccessListAdded</code></a> and <a href="rpc.serverNotifications.html#.roomAccessListRemoved"><code>rpc.serverNotifications.roomAccessListRemoved</code></a> notifications.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>enableDirectMessages</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Enables user to
+user <a href="rpc.clientRequests.html#.directMessage"><code>rpc.clientRequests.directMessage</code></a> communication.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>enableRoomsManagement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Allows to use
+<a href="rpc.clientRequests.html#.roomCreate"><code>rpc.clientRequests.roomCreate</code></a> and <a href="rpc.clientRequests.html#.roomDelete"><code>rpc.clientRequests.roomDelete</code></a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>enableUserlistUpdates</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Enables <a href="rpc.serverNotifications.html#.roomUserJoined"><code>rpc.serverNotifications.roomUserJoined</code></a> and <a href="rpc.serverNotifications.html#.roomUserLeft"><code>rpc.serverNotifications.roomUserLeft</code></a> messages.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>historyMaxGetMessages</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>100</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Room history size
+available via <a href="rpc.clientRequests.html#.roomRecentHistory"><code>rpc.clientRequests.roomRecentHistory</code></a> or via a
+single invocation <a href="rpc.clientRequests.html#.roomHistoryGet"><code>rpc.clientRequests.roomHistoryGet</code></a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>defaultHistoryLimit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>10000</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Is used for <a href="rpc.clientRequests.html#.roomCreate"><code>rpc.clientRequests.roomCreate</code></a> or when <a href="chat-service.ServiceAPI.html#addRoom"><code>chat-service.ServiceAPI#addRoom</code></a> is called without <code>historyMaxSize</code>
+option.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>useRawErrorObjects</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Send error objects
+instead of strings. See <a href="rpc.datatypes.html#.ChatServiceError"><code>rpc.datatypes.ChatServiceError</code></a>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>closeTimeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>15000</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Maximum time in ms to wait
+before a server disconnects all clients on shutdown.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>heartbeatRate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>10000</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Service instance heartbeat
+rate in ms.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>heartbeatTimeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>30000</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Service instance
+heartbeat timeout in ms, after this interval instance is considered
+inactive.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>busAckTimeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>5000</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Cluster bus ack waiting
+timeout in ms.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'memory'</span>
+|
+
+<span class="param-type">'redis'</span>
+|
+
+<span class="param-type">Class</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'memory'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Chat state.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>transport</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'socket.io'</span>
+|
+
+<span class="param-type">Class</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'socket.io'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Transport.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>adapter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'memory'</span>
+|
+
+<span class="param-type">'redis'</span>
+|
+
+<span class="param-type">Class</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'memory'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Adapter for
+service instances communication, must implement a
+<code>socket.io-adapter</code> API. Used with <code>socket.io</code> transport only if no
+<code>io</code> object is passed in <code>SocketIOTransportOptions</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stateOptions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Options.RedisStateOptions</span>
+|
+
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Options
+for a state.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>transportOptions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Options.SocketIOTransportOptions</span>
+|
+
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Options for a transport.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>adapterOptions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Adapter
+constructor arguments, used only when no <code>io</code> object is passed in
+<code>SocketIOTransportOptions</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id=".RedisStateOptions">RedisStateOptions</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>useCluster</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Enable Redis cluster.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lockTTL</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>10000</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Locks timeout in ms.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>redisOptions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>ioredis client
+constructor arguments. If <code>useCluster</code> is set, used as arguments
+for a cluster client constructor.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id=".SocketIOTransportOptions">SocketIOTransportOptions</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>namespace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'/chat-service'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Socket.io namespace.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>middleware</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;function()></span>
+|
+
+<span class="param-type">funcition</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Socket.io
+middleware to use on namespace.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>io</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Socket.io instance that should be used by
+ChatService.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>http</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Use socket.io http server integration, used
+only when no <code>io</code> object is passed.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ioOptions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Socket.io additional options, used
+only when no <code>io</code> object is passed.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Jul 29 2016 22:18:18 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

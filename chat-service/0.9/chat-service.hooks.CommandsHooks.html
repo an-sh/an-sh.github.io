@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>RequestsHooks - Documentation</title>
+    <title>CommandsHooks - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -22,12 +22,12 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="chat-service.ChatService.html">ChatService</a><ul class='members'><li data-type='member'><a href="chat-service.ChatService.html#.ChatServiceError">ChatServiceError</a></li><li data-type='member'><a href="chat-service.ChatService.html#.SocketIOClusterBus">SocketIOClusterBus</a></li><li data-type='member'><a href="chat-service.ChatService.html#clusterBus">clusterBus</a></li><li data-type='member'><a href="chat-service.ChatService.html#instanceUID">instanceUID</a></li><li data-type='member'><a href="chat-service.ChatService.html#io">io</a></li><li data-type='member'><a href="chat-service.ChatService.html#nsp">nsp</a></li><li data-type='member'><a href="chat-service.ChatService.html#redis">redis</a></li><li data-type='member'><a href="chat-service.ChatService.html#transport">transport</a></li></ul><ul class='methods'><li data-type='method'><a href="chat-service.ChatService.html#checkArguments">checkArguments</a></li><li data-type='method'><a href="chat-service.ChatService.html#close">close</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="chat-service.html#.event:closed">closed</a></li><li><a href="chat-service.html#.event:lockTimeExceeded">lockTimeExceeded</a></li><li><a href="chat-service.html#.event:ready">ready</a></li><li><a href="chat-service.html#.event:storeConsistencyFailure">storeConsistencyFailure</a></li><li><a href="chat-service.html#.event:transportConsistencyFailure">transportConsistencyFailure</a></li></ul><h3>Namespaces</h3><ul><li><a href="chat-service.html">chat-service</a></li><li><a href="chat-service.config.html">config</a></li><li><a href="chat-service.hooks.html">hooks</a></li><li><a href="rpc.html">rpc</a></li><li><a href="rpc.clientRequests.html">clientRequests</a><ul class='methods'><li data-type='method'><a href="rpc.clientRequests.html#.directAddToList">directAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetAccessList">directGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetWhitelistMode">directGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directRemoveFromList">directRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directSetWhitelistMode">directSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.listOwnSockets">listOwnSockets</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomAddToList">roomAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomCreate">roomCreate</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomDelete">roomDelete</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetAccessList">roomGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetOwner">roomGetOwner</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetWhitelistMode">roomGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryGet">roomHistoryGet</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryInfo">roomHistoryInfo</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomJoin">roomJoin</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomLeave">roomLeave</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRecentHistory">roomRecentHistory</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRemoveFromList">roomRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomSetWhitelistMode">roomSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomUserSeen">roomUserSeen</a></li><li data-type='method'><a href="rpc.clientRequests.html#.systemMessage">systemMessage</a></li></ul></li><li><a href="rpc.datatypes.html">datatypes</a><ul class='members'><li data-type='member'><a href="rpc.datatypes.html#.codeToFormat">codeToFormat</a></li></ul></li><li><a href="rpc.serverNotifications.html">serverNotifications</a><ul class='methods'><li data-type='method'><a href="rpc.serverNotifications.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.directMessageEcho">directMessageEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginConfirmed">loginConfirmed</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginRejected">loginRejected</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListAdded">roomAccessListAdded</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListRemoved">roomAccessListRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessRemoved">roomAccessRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomJoinedEcho">roomJoinedEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomLeftEcho">roomLeftEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomModeChanged">roomModeChanged</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserJoined">roomUserJoined</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserLeft">roomUserLeft</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketConnectEcho">socketConnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketDisconnectEcho">socketDisconnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.systemMessage">systemMessage</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="chat-service.RecoveryAPI.html">RecoveryAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.RecoveryAPI.html#getInstanceHeartbeat">getInstanceHeartbeat</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#instanceRecovery">instanceRecovery</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#roomStateSync">roomStateSync</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#userStateSync">userStateSync</a></li></ul></li><li><a href="chat-service.ServiceAPI.html">ServiceAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.ServiceAPI.html#addRoom">addRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#addUser">addUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomHistoryMaxSize">changeRoomHistoryMaxSize</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomOwner">changeRoomOwner</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteRoom">deleteRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteUser">deleteUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#disconnectUserSockets">disconnectUserSockets</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#execUserCommand">execUserCommand</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasDirectAccess">hasDirectAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoom">hasRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoomAccess">hasRoomAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasUser">hasUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#roomHasInList">roomHasInList</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#userHasInList">userHasInList</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="chat-service.ExecInfo.html">ExecInfo</a></li><li><a href="chat-service.hooks.HooksInterface.html">HooksInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.directMessagesChecker">directMessagesChecker</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onClose">onClose</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onConnect">onConnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onDisconnect">onDisconnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onStart">onStart</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.roomMessagesChecker">roomMessagesChecker</a></li></ul></li><li><a href="chat-service.hooks.RequestsHooks.html">RequestsHooks</a></li><li><a href="chat-service.TransportInterface.html">TransportInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.TransportInterface.html#bindHandler">bindHandler</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#emitToChannel">emitToChannel</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getSocket">getSocket</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#sendToChannel">sendToChannel</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="chat-service.ChatService.html">ChatService</a><ul class='members'><li data-type='member'><a href="chat-service.ChatService.html#.ChatServiceError">ChatServiceError</a></li><li data-type='member'><a href="chat-service.ChatService.html#.SocketIOClusterBus">SocketIOClusterBus</a></li><li data-type='member'><a href="chat-service.ChatService.html#clusterBus">clusterBus</a></li><li data-type='member'><a href="chat-service.ChatService.html#instanceUID">instanceUID</a></li><li data-type='member'><a href="chat-service.ChatService.html#io">io</a></li><li data-type='member'><a href="chat-service.ChatService.html#nsp">nsp</a></li><li data-type='member'><a href="chat-service.ChatService.html#redis">redis</a></li><li data-type='member'><a href="chat-service.ChatService.html#transport">transport</a></li></ul><ul class='methods'><li data-type='method'><a href="chat-service.ChatService.html#checkArguments">checkArguments</a></li><li data-type='method'><a href="chat-service.ChatService.html#close">close</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="chat-service.ChatService.html#.event:closed">closed</a></li><li><a href="chat-service.ChatService.html#.event:lockTimeExceeded">lockTimeExceeded</a></li><li><a href="chat-service.ChatService.html#.event:ready">ready</a></li><li><a href="chat-service.ChatService.html#.event:storeConsistencyFailure">storeConsistencyFailure</a></li><li><a href="chat-service.ChatService.html#.event:transportConsistencyFailure">transportConsistencyFailure</a></li></ul><h3>Namespaces</h3><ul><li><a href="chat-service.html">chat-service</a></li><li><a href="chat-service.config.html">config</a></li><li><a href="chat-service.hooks.html">hooks</a></li><li><a href="rpc.html">rpc</a></li><li><a href="rpc.clientRequests.html">clientRequests</a><ul class='methods'><li data-type='method'><a href="rpc.clientRequests.html#.directAddToList">directAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetAccessList">directGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetWhitelistMode">directGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directRemoveFromList">directRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directSetWhitelistMode">directSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.listOwnSockets">listOwnSockets</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomAddToList">roomAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomCreate">roomCreate</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomDelete">roomDelete</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetAccessList">roomGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetOwner">roomGetOwner</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetWhitelistMode">roomGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryGet">roomHistoryGet</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryInfo">roomHistoryInfo</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomJoin">roomJoin</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomLeave">roomLeave</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRecentHistory">roomRecentHistory</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRemoveFromList">roomRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomSetWhitelistMode">roomSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomUserSeen">roomUserSeen</a></li><li data-type='method'><a href="rpc.clientRequests.html#.systemMessage">systemMessage</a></li></ul></li><li><a href="rpc.datatypes.html">datatypes</a><ul class='members'><li data-type='member'><a href="rpc.datatypes.html#.codeToFormat">codeToFormat</a></li></ul></li><li><a href="rpc.serverNotifications.html">serverNotifications</a><ul class='methods'><li data-type='method'><a href="rpc.serverNotifications.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.directMessageEcho">directMessageEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginConfirmed">loginConfirmed</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginRejected">loginRejected</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListAdded">roomAccessListAdded</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListRemoved">roomAccessListRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessRemoved">roomAccessRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomJoinedEcho">roomJoinedEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomLeftEcho">roomLeftEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomModeChanged">roomModeChanged</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserJoined">roomUserJoined</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserLeft">roomUserLeft</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketConnectEcho">socketConnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketDisconnectEcho">socketDisconnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.systemMessage">systemMessage</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="chat-service.RecoveryAPI.html">RecoveryAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.RecoveryAPI.html#getInstanceHeartbeat">getInstanceHeartbeat</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#instanceRecovery">instanceRecovery</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#roomStateSync">roomStateSync</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#userStateSync">userStateSync</a></li></ul></li><li><a href="chat-service.ServiceAPI.html">ServiceAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.ServiceAPI.html#addRoom">addRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#addUser">addUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomHistoryMaxSize">changeRoomHistoryMaxSize</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomOwner">changeRoomOwner</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteRoom">deleteRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteUser">deleteUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#disconnectUserSockets">disconnectUserSockets</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#execUserCommand">execUserCommand</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasDirectAccess">hasDirectAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoom">hasRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoomAccess">hasRoomAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasUser">hasUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#roomHasInList">roomHasInList</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#userHasInList">userHasInList</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="chat-service.ExecInfo.html">ExecInfo</a></li><li><a href="chat-service.hooks.CommandsHooks.html">CommandsHooks</a></li><li><a href="chat-service.hooks.HooksInterface.html">HooksInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.directMessagesChecker">directMessagesChecker</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onClose">onClose</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onConnect">onConnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onDisconnect">onDisconnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.onStart">onStart</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#.roomMessagesChecker">roomMessagesChecker</a></li></ul></li><li><a href="chat-service.TransportInterface.html">TransportInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.TransportInterface.html#bindHandler">bindHandler</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#emitToChannel">emitToChannel</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getSocket">getSocket</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#sendToChannel">sendToChannel</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <div id="main">
     
-    <h1 class="page-title">RequestsHooks</h1>
+    <h1 class="page-title">CommandsHooks</h1>
     
 
     
@@ -42,10 +42,11 @@
         <h2>
             <span class="ancestors"><a href="chat-service.html">chat-service</a><a href="chat-service.hooks.html">.hooks</a>.</span>
         
-        RequestsHooks
+        CommandsHooks
         </h2>
         
-            <div class="class-description"><p>Requests hooks full list, they are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a>. For a concise description see <a href="global.html"><code>beforeHook</code></a> and <a href="global.html"><code>afterHook</code></a>.</p></div>
+            <div class="class-description"><p>Commands hooks full list, they are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a>. There are just two types of command hooks, for
+a concise description see <a href="global.html"><code>beforeHook</code></a> and <a href="global.html"><code>afterHook</code></a>.</p></div>
         
     
 </header>
@@ -85,6 +86,13 @@
 
     
 
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html">rpc.clientRequests</a></li>
+        </ul>
+    </dd>
     
 
     
@@ -169,7 +177,8 @@
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -365,7 +374,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -561,7 +571,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -757,7 +768,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -953,7 +965,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -1149,7 +1162,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -1345,7 +1359,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -1541,7 +1556,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -1737,7 +1753,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -1933,7 +1950,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -2129,7 +2147,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -2325,7 +2344,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -2521,7 +2541,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -2717,7 +2738,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -2913,7 +2935,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -3109,7 +3132,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -3305,7 +3329,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -3501,7 +3526,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -3697,7 +3723,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -3893,7 +3920,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -4089,7 +4117,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -4285,7 +4314,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -4481,7 +4511,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -4677,7 +4708,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -4873,7 +4905,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -5069,7 +5102,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -5265,7 +5299,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -5461,7 +5496,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -5657,7 +5693,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -5853,7 +5890,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -6049,7 +6087,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -6245,7 +6284,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -6441,7 +6481,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -6637,7 +6678,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -6833,7 +6875,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -7029,7 +7072,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -7225,7 +7269,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -7421,7 +7466,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -7617,7 +7663,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -7813,7 +7860,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -8009,7 +8057,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -8205,7 +8254,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -8401,7 +8451,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -8597,7 +8648,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -8793,7 +8845,8 @@ stop further execution, and return results to the command issuer.</p>
 
 <div class="description">
     <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after ChatService default event handlers.</p>
+are executed after ChatService standard handlers, but before
+returning results to the command issuer.</p>
 </div>
 
 
@@ -8989,7 +9042,8 @@ or a resolved array will override command results.</p>
 
 <div class="description">
     <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
-are executed after an arguments validation.</p>
+are executed after a command arguments validation, but before
+ChatService standard handler.</p>
 </div>
 
 
@@ -9148,7 +9202,7 @@ stop further execution, and return results to the command issuer.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Jul 29 2016 22:18:18 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Aug 01 2016 21:18:56 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

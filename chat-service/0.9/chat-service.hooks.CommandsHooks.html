@@ -7223,6 +7223,400 @@ stop further execution, and return results to the command issuer.</p>
 
     
 
+    <h4 class="name" id="roomNotificationsInfoAfter"><span class="type-signature"></span>roomNotificationsInfoAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomNotificationsInfoBefore"><span class="type-signature"></span>roomNotificationsInfoBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
     <h4 class="name" id="roomRecentHistoryAfter"><span class="type-signature"></span>roomRecentHistoryAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
 
     
@@ -9204,7 +9598,7 @@ stop further execution, and return results to the command issuer.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Aug 12 2016 21:28:00 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Aug 13 2016 00:15:07 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -65,7 +65,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line22">line 22</a>
+        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -105,7 +105,7 @@
 
 
 <div class="description">
-    <p>Starts a server.</p>
+    Starts a server.
 </div>
 
 
@@ -169,7 +169,7 @@
 
             
 
-            <td class="description last"><p>Options that are passed to wss server.</p></td>
+            <td class="description last">Options that are passed to wss server.</td>
         </tr>
 
     
@@ -202,7 +202,7 @@
 
             
 
-            <td class="description last"><p>Server options.</p></td>
+            <td class="description last">Server options.</td>
         </tr>
 
     
@@ -235,7 +235,7 @@
 
             
 
-            <td class="description last"><p>Socket options.</p></td>
+            <td class="description last">Socket options.</td>
         </tr>
 
     
@@ -350,7 +350,7 @@
 
 
 <div class="description">
-    <p>Git a client by id.</p>
+    Git a client by id.
 </div>
 
 
@@ -404,7 +404,7 @@
 
             
 
-            <td class="description last"><p>Client id.</p></td>
+            <td class="description last">Client id.</td>
         </tr>
 
     
@@ -428,7 +428,7 @@
 
         
 <div class="param-desc">
-    <p>Client if found.</p>
+    Client if found.
 </div>
 
 
@@ -456,7 +456,7 @@
 
     
 
-    <h4 class="name" id="close"><span class="type-signature"></span>close<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;undefined>}</span></h4>
+    <h4 class="name" id="close"><span class="type-signature"></span>close<span class="signature">(code<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;undefined>}</span></h4>
 
     
 
@@ -468,7 +468,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line124">line 124</a>
+        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line125">line 125</a>
     </li></ul></dd>
     
 
@@ -508,7 +508,7 @@
 
 
 <div class="description">
-    <p>Closes a server.</p>
+    Closes a server.
 </div>
 
 
@@ -519,6 +519,75 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>code</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">code</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>1000</code>
+                
+                </td>
+            
+
+            <td class="description last">Code as per WebSocket spec.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -537,7 +606,7 @@
 
         
 <div class="param-desc">
-    <p>Promise.</p>
+    Promise.
 </div>
 
 
@@ -580,7 +649,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line24">line 24</a>
+        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -620,9 +689,9 @@
 
 
 <div class="description">
-    <p>Connection hook is run when a client connects to a server. The
+    Connection hook is run when a client connects to a server. The
 result is used as an auth reply data. May also return promises
-for an asynchronous execution.</p>
+for an asynchronous execution.
 </div>
 
 
@@ -676,7 +745,7 @@ for an asynchronous execution.</p>
 
             
 
-            <td class="description last"><p>Client.</p></td>
+            <td class="description last">Client.</td>
         </tr>
 
     
@@ -699,7 +768,7 @@ for an asynchronous execution.</p>
 
             
 
-            <td class="description last"><p>Auth data.</p></td>
+            <td class="description last">Auth data.</td>
         </tr>
 
     
@@ -723,8 +792,8 @@ for an asynchronous execution.</p>
 
         
 <div class="param-desc">
-    <p>Auth reply
-data.</p>
+    Auth reply
+data.
 </div>
 
 
@@ -763,7 +832,7 @@ data.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line37">line 37</a>
+        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -852,8 +921,8 @@ data.</p>
 
             
 
-            <td class="description last"><p>Connection
-hook.</p></td>
+            <td class="description last">Connection
+hook.</td>
         </tr>
 
     
@@ -884,8 +953,8 @@ hook.</p></td>
 
             
 
-            <td class="description last"><p>Alternative constructor for wss
-server.</p></td>
+            <td class="description last">Alternative constructor for wss
+server.</td>
         </tr>
 
     
@@ -937,7 +1006,7 @@ server.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line64">line 64</a>
+        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line65">line 65</a>
     </li></ul></dd>
     
 
@@ -977,7 +1046,7 @@ server.</p></td>
 
 
 <div class="description">
-    <p>Emits ready event.</p>
+    Emits ready event.
 </div>
 
 
@@ -1021,7 +1090,7 @@ server.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line69">line 69</a>
+        <a href="Server.js.html">Server.js</a>, <a href="Server.js.html#line70">line 70</a>
     </li></ul></dd>
     
 
@@ -1061,7 +1130,7 @@ server.</p></td>
 
 
 <div class="description">
-    <p>Emits wss error events.</p>
+    Emits wss error events.
 </div>
 
 
@@ -1115,7 +1184,7 @@ server.</p></td>
 
             
 
-            <td class="description last"><p>Error.</p></td>
+            <td class="description last">Error.</td>
         </tr>
 
     
@@ -1151,7 +1220,7 @@ server.</p></td>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a> on Fri Sep 23 2016 18:43:19 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a> on Sat Sep 24 2016 20:52:39 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

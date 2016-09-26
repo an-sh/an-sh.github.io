@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Server.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a><ul class='methods'><li data-type='method'><a href="Client.html#send">send</a></li><li data-type='method'><a href="Client.html#invoke">invoke</a></li><li data-type='method'><a href="Client.html#register">register</a></li><li data-type='method'><a href="Client.html#reconnect">reconnect</a></li><li data-type='method'><a href="Client.html#close">close</a></li></ul></li><li><a href="Server.html">Server</a><ul class='methods'><li data-type='method'><a href="Server.html#getClient">getClient</a></li><li data-type='method'><a href="Server.html#close">close</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:open">open</a></li><li><a href="Client.html#event:error">error</a></li><li><a href="Client.html#event:close">close</a></li><li><a href="Client.html#event:connect">connect</a></li><li><a href="Server.html#event:ready">ready</a></li><li><a href="Server.html#event:error">error</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Server.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// -*-Javascript-*-
+// @flow
+
+'use strict'
+
+const Client = require('./Client')
+const EventEmitter = require('events')
+const WebSocket = require('ws')
+const WebSocketServer = require('ws').Server
+const uid = require('uid-safe')
+const { CLOSE_FORBIDDEN } = require('./constants')
+const { assign, attempt, fromCallback, toEmit } = require('./utils')
+
+const defaults = {
+  Server: WebSocketServer,
+  connectionHook: null,
+  authTimeout: 20000
+}
+
+/**
+ * Connection hook is run when a client connects to a server. The
+ * result is used as an auth reply data. May also return promises
+ * for an asynchronous execution.
+ *
+ * @callback Server.ConnectionHook
+ *
+ * @param {Client} client Client.
+ * @param {Object} auth Auth data.
+ * @return {Promise&lt;Object|undefined>|Object|undefined} Auth reply
+ * data.
+ */
+type ConnectionHook = (client: Client, data?: any) => Promise&lt;any>
+
+/**
+ * @typedef {Object} Server.ServerOptions
+ *
+ * @property {Server.ConnectionHook} [connectionHook] Connection
+ * hook.
+ * @property {Object} [Server] Alternative constructor for wss
+ * server.
+ * @property {number} [authTimeout=20000] Auth message wait timeout in
+ * ms.
+ */
+type ServerOptions = { Server?: constructor,
+                       connectionHook?: ConnectionHook,
+                       authTimeout?: number
+                     }
+
+type SocketOptions = Object
+
+/**
+ * @extends EventEmitter
+ *
+ * @emits Server#ready
+ * @emits Server#error
+ */
+class Server extends EventEmitter {
+  authTimeout: number
+  Server: constructor
+  clients: Map&lt;string, Object>
+  connectionHook: ConnectionHook
+  socketOptions: Object
+  wss: Object
+
+  /**
+   * Starts a server.
+   *
+   * @param {Object} wssOptions Options that are passed to wss server.
+   * @param {Server.ServerOptions} [serverOptions] Server options.
+   * @param {Client.SocketOptions} [socketOptions] Socket options.
+   */
+  constructor (wssOptions: Object,
+               serverOptions: ServerOptions = {},
+               socketOptions: SocketOptions = {}) {
+    super()
+    this.socketOptions = { WebSocket }
+    assign(this.socketOptions, socketOptions)
+    assign(this, defaults, serverOptions)
+    this.clients = new Map()
+    this._setEvents(wssOptions)
+  }
+
+  _setEvents (wssOptions: Object) : void {
+    /**
+     * Emits ready event.
+     * @event Server#ready
+     */
+    this.wss = new this.Server(wssOptions, toEmit(this))
+    /**
+     * Emits wss error events.
+     * @event Server#error
+     * @param {Error} error Error.
+     */
+    this.wss.on('error', this.emit.bind(this))
+    this.wss.on('connection', socket => this._onConnection(socket))
+  }
+
+  _onConnection (socket: Object &amp; EventEmitter) : void {
+    let timer =
+        setTimeout(socket.close.bind(socket, CLOSE_FORBIDDEN), this.authTimeout)
+    socket.once('message', data => this._addClient(socket, data, timer))
+  }
+
+  _addClient (socket: EventEmitter, data: any, timer: number) : void {
+    let client
+    clearTimeout(timer)
+    uid(18).then(id => {
+      client = new Client(null, assign({socket, id}, this.socketOptions))
+      if (this.connectionHook) {
+        return attempt(() => client.decoder(data))
+          .then(authData => this.connectionHook(client, authData))
+      }
+    }).then(authReplyData => {
+      if (client._isOpen()) {
+        client._setEvents()
+        client.connected = true
+        this.clients.set(client.id, client)
+        client.on('close', () => this._removeClient(client.id))
+        client.send('connect', authReplyData)
+      }
+    }).catch(error => {
+      /* istanbul ignore else */
+      if (client) {
+        let str = error.toString()
+        client.close(CLOSE_FORBIDDEN, str)
+      }
+    })
+  }
+
+  _removeClient (id: string) : void {
+    this.clients.delete(id)
+  }
+
+  /**
+   * Git a client by id.
+   * @param {string} id Client id.
+   * @returns {Client|undefined} Client if found.
+   */
+  getClient (id: string) : Client {
+    return this.clients.get(id)
+  }
+
+  /**
+   * Closes a server.
+   * @param {code} [code=1000] Code as per WebSocket spec.
+   * @returns {Promise&lt;undefined>} Promise.
+   */
+  close (code: number = 1000) : Promise&lt;void> {
+    for (let [, client] of this.clients) {
+      client.close(code)
+    }
+    this.clients.clear()
+    return fromCallback(cb => this.wss.close(cb))
+  }
+}
+
+module.exports = Server
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a> on Tue Sep 27 2016 00:14:43 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

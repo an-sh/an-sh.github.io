@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ChatService - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="chat-service.ChatService.html">ChatService</a><ul class='members'><li data-type='member'><a href="chat-service.ChatService.html#.ChatServiceError">ChatServiceError</a></li><li data-type='member'><a href="chat-service.ChatService.html#clusterBus">clusterBus</a></li><li data-type='member'><a href="chat-service.ChatService.html#instanceUID">instanceUID</a></li><li data-type='member'><a href="chat-service.ChatService.html#transport">transport</a></li></ul><ul class='methods'><li data-type='method'><a href="chat-service.ChatService.html#checkArguments">checkArguments</a></li><li data-type='method'><a href="chat-service.ChatService.html#close">close</a></li></ul></li><li><a href="chat-service.StorePlugin.html">StorePlugin</a></li><li><a href="chat-service.TransportPlugin.html">TransportPlugin</a><ul class='methods'><li data-type='method'><a href="chat-service.TransportPlugin.html#close">close</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#disconnectSocket">disconnectSocket</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#joinChannel">joinChannel</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#leaveChannel">leaveChannel</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#setEvents">setEvents</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="chat-service.ChatService.html#.event:closed">closed</a></li><li><a href="chat-service.ChatService.html#.event:lockTimeExceeded">lockTimeExceeded</a></li><li><a href="chat-service.ChatService.html#.event:ready">ready</a></li><li><a href="chat-service.ChatService.html#.event:storeConsistencyFailure">storeConsistencyFailure</a></li><li><a href="chat-service.ChatService.html#.event:transportConsistencyFailure">transportConsistencyFailure</a></li></ul><h3>Namespaces</h3><ul><li><a href="chat-service.html">chat-service</a></li><li><a href="chat-service.config.html">config</a></li><li><a href="chat-service.hooks.html">hooks</a></li><li><a href="rpc.html">rpc</a></li><li><a href="rpc.clientRequests.html">clientRequests</a><ul class='methods'><li data-type='method'><a href="rpc.clientRequests.html#.directAddToList">directAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetAccessList">directGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetWhitelistMode">directGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directRemoveFromList">directRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directSetWhitelistMode">directSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.listOwnSockets">listOwnSockets</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomAddToList">roomAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomCreate">roomCreate</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomDelete">roomDelete</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetAccessList">roomGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetOwner">roomGetOwner</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetWhitelistMode">roomGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryGet">roomHistoryGet</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryInfo">roomHistoryInfo</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomJoin">roomJoin</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomLeave">roomLeave</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomNotificationsInfo">roomNotificationsInfo</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRecentHistory">roomRecentHistory</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRemoveFromList">roomRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomSetWhitelistMode">roomSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomUserSeen">roomUserSeen</a></li><li data-type='method'><a href="rpc.clientRequests.html#.systemMessage">systemMessage</a></li></ul></li><li><a href="rpc.datatypes.html">datatypes</a><ul class='members'><li data-type='member'><a href="rpc.datatypes.html#.codeToFormat">codeToFormat</a></li></ul></li><li><a href="rpc.serverNotifications.html">serverNotifications</a><ul class='methods'><li data-type='method'><a href="rpc.serverNotifications.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.directMessageEcho">directMessageEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginConfirmed">loginConfirmed</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginRejected">loginRejected</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListAdded">roomAccessListAdded</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListRemoved">roomAccessListRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessRemoved">roomAccessRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomJoinedEcho">roomJoinedEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomLeftEcho">roomLeftEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomModeChanged">roomModeChanged</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserJoined">roomUserJoined</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserLeft">roomUserLeft</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketConnectEcho">socketConnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketDisconnectEcho">socketDisconnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.systemMessage">systemMessage</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="chat-service.RecoveryAPI.html">RecoveryAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.RecoveryAPI.html#getInstanceHeartbeat">getInstanceHeartbeat</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#instanceRecovery">instanceRecovery</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#roomStateSync">roomStateSync</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#userStateSync">userStateSync</a></li></ul></li><li><a href="chat-service.ServiceAPI.html">ServiceAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.ServiceAPI.html#addRoom">addRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#addUser">addUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeAccessListsUpdates">changeAccessListsUpdates</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomHistoryMaxSize">changeRoomHistoryMaxSize</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomOwner">changeRoomOwner</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeUserlistUpdates">changeUserlistUpdates</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteRoom">deleteRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteUser">deleteUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#disconnectUserSockets">disconnectUserSockets</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#execUserCommand">execUserCommand</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasDirectAccess">hasDirectAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoom">hasRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoomAccess">hasRoomAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasUser">hasUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#roomHasInList">roomHasInList</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#userHasInList">userHasInList</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="chat-service.ExecInfo.html">ExecInfo</a></li><li><a href="chat-service.hooks.CommandsHooks.html">CommandsHooks</a></li><li><a href="chat-service.hooks.HooksInterface.html">HooksInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#directMessagesChecker">directMessagesChecker</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onClose">onClose</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onConnect">onConnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onDisconnect">onDisconnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onJoin">onJoin</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onLeave">onLeave</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onStart">onStart</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#roomMessagesChecker">roomMessagesChecker</a></li></ul></li><li><a href="chat-service.TransportInterface.html">TransportInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.TransportInterface.html#bindHandler">bindHandler</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#emitToChannel">emitToChannel</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getHandshakeData">getHandshakeData</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getServer">getServer</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getSocket">getSocket</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#sendToChannel">sendToChannel</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">ChatService</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="chat-service.html">chat-service</a>.</span>
+        
+        ChatService
+        </h2>
+        
+            <div class="class-description"><p>Service class, is the package exported object.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="ChatService"><span class="type-signature"></span>new ChatService<span class="signature">(options<span class="signature-attributes">opt</span>, hooks<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <dt class="mixes">Mixes In:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="chat-service.ServiceAPI.html">chat-service.ServiceAPI</a></li>
+        
+            <li><a href="chat-service.RecoveryAPI.html">chat-service.RecoveryAPI</a></li>
+        
+        </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Crates an object and starts a new service instance. The <a href="chat-service.ChatService.html#close"><code>chat-service.ChatService#close</code></a> method <strong>MUST</strong> be called before
+the node process exit.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">starting a server</p>
+    
+    <pre class="prettyprint"><code>  let ChatService = require('chat-service')
+  let service = new ChatService(options, hooks)</code></pre>
+
+        <p class="code-caption">server-side: adding a room</p>
+    
+    <pre class="prettyprint"><code>  let owner = 'admin'
+  let whitelistOnly = true
+  let whitelist = [ 'user' ]
+  let state = { owner, whitelistOnly, whitelist }
+  chatService.addRoom('someRoom', state).then(fn)</code></pre>
+
+        <p class="code-caption">server-side: sending a room message</p>
+    
+    <pre class="prettyprint"><code>  let room = 'someRoom'
+  let msg = { textMessage: 'some message' }
+  let context = {
+    userName: 'system',
+    bypassPermissions: true
+  }
+  chatService.execUserCommand(context, 'roomMessage', room, msg)
+    .then(fn)</code></pre>
+
+        <p class="code-caption">server-side: joining an user socket to a room</p>
+    
+    <pre class="prettyprint"><code>  let room = 'someRoom'
+  let context = {
+    userName: 'user',
+    id: id // socket id
+  }
+  chatService.execUserCommand(context, 'roomJoin', room)
+    .then(fn) // real sockets will get a notification</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.config.html#.options">chat-service.config.options</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Service
+configuration options.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hooks</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.hooks.HooksInterface.html">chat-service.hooks.HooksInterface</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Service
+customisation hooks.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<h5>Fires:</h5>
+<ul>
+    <li><a href="chat-service.ChatService.html#.event:ready">chat-service.ChatService.event:ready</a></li>
+
+    <li><a href="chat-service.ChatService.html#.event:closed">chat-service.ChatService.event:closed</a></li>
+
+    <li><a href="chat-service.ChatService.html#.event:storeConsistencyFailure">chat-service.ChatService.event:storeConsistencyFailure</a></li>
+
+    <li><a href="chat-service.ChatService.html#.event:transportConsistencyFailure">chat-service.ChatService.event:transportConsistencyFailure</a></li>
+
+    <li><a href="chat-service.ChatService.html#.event:lockTimeExceeded">chat-service.ChatService.event:lockTimeExceeded</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li>EventEmitter</li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".ChatServiceError"><span class="type-signature">(static, readonly) </span>ChatServiceError<span class="type-signature"> :Class</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.datatypes.html#.ChatServiceError">rpc.datatypes.ChatServiceError</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>ChatService errors constructor. This errors are intended to be
+returned to clients as a part of a normal service functioning
+(something like 403 errors). Can be also used to create custom
+errors subclasses.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Class</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="clusterBus"><span class="type-signature">(readonly) </span>clusterBus<span class="type-signature"> :EventEmitter</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Cluster communication via an adapter. Emits messages to all
+services nodes, including the sender node.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">EventEmitter</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="instanceUID"><span class="type-signature">(readonly) </span>instanceUID<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Service instance UID.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="transport"><span class="type-signature">(readonly) </span>transport<span class="type-signature"> :<a href="chat-service.TransportInterface.html">chat-service.TransportInterface</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Transport object.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="chat-service.TransportInterface.html">chat-service.TransportInterface</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="checkArguments"><span class="type-signature"></span>checkArguments<span class="signature">(name, &hellip;args, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;undefined>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Exposes an internal arguments validation method, it is run
+automatically by all client request (command) handlers.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command arguments.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Promise that resolves without any
+data if validation is successful, otherwise a promise is
+rejected.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;undefined></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="close"><span class="type-signature"></span>close<span class="signature">(cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;undefined>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Closes server.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Promise that resolves without any data.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;undefined></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+        <h3 class="subsection-title">Events</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".event:closed">closed</h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Service is closed, state and transport are closed.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>If was closed due to an error.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".event:lockTimeExceeded">lockTimeExceeded</h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="chat-service.RecoveryAPI.html">chat-service.RecoveryAPI</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lockInfo.userName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>User name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lockInfo.roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Room name.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description">
+    <p>Lock was hold longer than a lock ttl.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Lock id.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lockInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Lock resource details.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".event:ready">ready</h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Service is ready, state and transport are up.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".event:storeConsistencyFailure">storeConsistencyFailure</h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="chat-service.RecoveryAPI.html">chat-service.RecoveryAPI</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo.userName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>User name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo.opType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Operation type.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo.roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Room name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo.id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Socket id.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description">
+    <p>State store failed to be updated to reflect an user's connection
+or presence state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Operation details.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".event:transportConsistencyFailure">transportConsistencyFailure</h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo.userName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>User name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo.opType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Operation type.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo.roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Room name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo.id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Socket id.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description">
+    <p>Failed to teardown a transport connection.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Error</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>operationInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Operation details.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Wed Oct 12 2016 19:56:04 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

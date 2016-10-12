@@ -1,0 +1,2693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>serverNotifications - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="chat-service.ChatService.html">ChatService</a><ul class='members'><li data-type='member'><a href="chat-service.ChatService.html#.ChatServiceError">ChatServiceError</a></li><li data-type='member'><a href="chat-service.ChatService.html#clusterBus">clusterBus</a></li><li data-type='member'><a href="chat-service.ChatService.html#instanceUID">instanceUID</a></li><li data-type='member'><a href="chat-service.ChatService.html#transport">transport</a></li></ul><ul class='methods'><li data-type='method'><a href="chat-service.ChatService.html#checkArguments">checkArguments</a></li><li data-type='method'><a href="chat-service.ChatService.html#close">close</a></li></ul></li><li><a href="chat-service.StorePlugin.html">StorePlugin</a></li><li><a href="chat-service.TransportPlugin.html">TransportPlugin</a><ul class='methods'><li data-type='method'><a href="chat-service.TransportPlugin.html#close">close</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#disconnectSocket">disconnectSocket</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#joinChannel">joinChannel</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#leaveChannel">leaveChannel</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#setEvents">setEvents</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="chat-service.ChatService.html#.event:closed">closed</a></li><li><a href="chat-service.ChatService.html#.event:lockTimeExceeded">lockTimeExceeded</a></li><li><a href="chat-service.ChatService.html#.event:ready">ready</a></li><li><a href="chat-service.ChatService.html#.event:storeConsistencyFailure">storeConsistencyFailure</a></li><li><a href="chat-service.ChatService.html#.event:transportConsistencyFailure">transportConsistencyFailure</a></li></ul><h3>Namespaces</h3><ul><li><a href="chat-service.html">chat-service</a></li><li><a href="chat-service.config.html">config</a></li><li><a href="chat-service.hooks.html">hooks</a></li><li><a href="rpc.html">rpc</a></li><li><a href="rpc.clientRequests.html">clientRequests</a><ul class='methods'><li data-type='method'><a href="rpc.clientRequests.html#.directAddToList">directAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetAccessList">directGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetWhitelistMode">directGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directRemoveFromList">directRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directSetWhitelistMode">directSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.listOwnSockets">listOwnSockets</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomAddToList">roomAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomCreate">roomCreate</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomDelete">roomDelete</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetAccessList">roomGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetOwner">roomGetOwner</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetWhitelistMode">roomGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryGet">roomHistoryGet</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryInfo">roomHistoryInfo</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomJoin">roomJoin</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomLeave">roomLeave</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomNotificationsInfo">roomNotificationsInfo</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRecentHistory">roomRecentHistory</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRemoveFromList">roomRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomSetWhitelistMode">roomSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomUserSeen">roomUserSeen</a></li><li data-type='method'><a href="rpc.clientRequests.html#.systemMessage">systemMessage</a></li></ul></li><li><a href="rpc.datatypes.html">datatypes</a><ul class='members'><li data-type='member'><a href="rpc.datatypes.html#.codeToFormat">codeToFormat</a></li></ul></li><li><a href="rpc.serverNotifications.html">serverNotifications</a><ul class='methods'><li data-type='method'><a href="rpc.serverNotifications.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.directMessageEcho">directMessageEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginConfirmed">loginConfirmed</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginRejected">loginRejected</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListAdded">roomAccessListAdded</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListRemoved">roomAccessListRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessRemoved">roomAccessRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomJoinedEcho">roomJoinedEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomLeftEcho">roomLeftEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomModeChanged">roomModeChanged</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserJoined">roomUserJoined</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserLeft">roomUserLeft</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketConnectEcho">socketConnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketDisconnectEcho">socketDisconnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.systemMessage">systemMessage</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="chat-service.RecoveryAPI.html">RecoveryAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.RecoveryAPI.html#getInstanceHeartbeat">getInstanceHeartbeat</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#instanceRecovery">instanceRecovery</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#roomStateSync">roomStateSync</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#userStateSync">userStateSync</a></li></ul></li><li><a href="chat-service.ServiceAPI.html">ServiceAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.ServiceAPI.html#addRoom">addRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#addUser">addUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeAccessListsUpdates">changeAccessListsUpdates</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomHistoryMaxSize">changeRoomHistoryMaxSize</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomOwner">changeRoomOwner</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeUserlistUpdates">changeUserlistUpdates</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteRoom">deleteRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteUser">deleteUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#disconnectUserSockets">disconnectUserSockets</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#execUserCommand">execUserCommand</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasDirectAccess">hasDirectAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoom">hasRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoomAccess">hasRoomAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasUser">hasUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#roomHasInList">roomHasInList</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#userHasInList">userHasInList</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="chat-service.ExecInfo.html">ExecInfo</a></li><li><a href="chat-service.hooks.CommandsHooks.html">CommandsHooks</a></li><li><a href="chat-service.hooks.HooksInterface.html">HooksInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#directMessagesChecker">directMessagesChecker</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onClose">onClose</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onConnect">onConnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onDisconnect">onDisconnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onJoin">onJoin</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onLeave">onLeave</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onStart">onStart</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#roomMessagesChecker">roomMessagesChecker</a></li></ul></li><li><a href="chat-service.TransportInterface.html">TransportInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.TransportInterface.html#bindHandler">bindHandler</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#emitToChannel">emitToChannel</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getHandshakeData">getHandshakeData</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getServer">getServer</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getSocket">getSocket</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#sendToChannel">sendToChannel</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">serverNotifications</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="rpc.html">rpc</a>.</span>
+        
+        serverNotifications
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html">rpc.clientRequests</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+        
+            <div class="description"><p>Notifications that are sent from a server to a client, no client's
+reply is expected.</p></div>
+        
+
+        
+            <h3>Example</h3>
+            
+        <p class="code-caption">socket.io client example</p>
+    
+    <pre class="prettyprint"><code>  let socket = io.connect(url, opts)
+  // the handler will persist across reconnections.
+  socket.on('directMessage', message => {
+    // just the same as any event. no reply is required.
+  })</code></pre>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".directMessage"><span class="type-signature">(static) </span>directMessage<span class="signature">(message)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.directMessage">rpc.clientRequests.directMessage</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Direct message.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="rpc.datatypes.html#.ProcessedMessage">rpc.datatypes.ProcessedMessage</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Message.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".directMessageEcho"><span class="type-signature">(static) </span>directMessageEcho<span class="signature">(toUser, message)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.directMessage">rpc.clientRequests.directMessage</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Direct message echo. If an user have several connections from
+different sockets, and if one client sends <a href="rpc.clientRequests.html#.directMessage"><code>rpc.clientRequests.directMessage</code></a>, others will receive a
+message echo.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>toUser</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Message receiver.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="rpc.datatypes.html#.ProcessedMessage">rpc.datatypes.ProcessedMessage</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Message.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".loginConfirmed"><span class="type-signature">(static) </span>loginConfirmed<span class="signature">(userName, authData)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.serverNotifications.html#.loginRejected">rpc.serverNotifications.loginRejected</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>A client should wait until this event before issuing any
+requests. If auth has failed <a href="rpc.serverNotifications.html#.loginRejected"><code>rpc.serverNotifications.loginRejected</code></a> notification will be emitted
+instead. Only one of these two events will be emitted once per
+connection. Also transport plugins may use other means of login
+confirmation.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>userName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>authData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="rpc.datatypes.html#.AuthData">rpc.datatypes.AuthData</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Additional auth data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".loginRejected"><span class="type-signature">(static) </span>loginRejected<span class="signature">(reason)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.serverNotifications.html#.loginConfirmed">rpc.serverNotifications.loginConfirmed</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>An auth error event. Also transport plugins may use other means of
+login rejection.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>reason</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="rpc.datatypes.html#.ChatServiceError">rpc.datatypes.ChatServiceError</a></span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Error.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roomAccessListAdded"><span class="type-signature">(static) </span>roomAccessListAdded<span class="signature">(roomName, listName, userNames)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.roomAddToList">rpc.clientRequests.roomAddToList</a></li>
+        
+            <li><a href="chat-service.ServiceAPI.html#changeAccessListsUpdates">chat-service.ServiceAPI#changeAccessListsUpdates</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Indicates a room access list add.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Rooms name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>listName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>List name. Possible values are:
+'blacklist'|'adminlist'|'whitelist'</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userNames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User names removed from the list.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roomAccessListRemoved"><span class="type-signature">(static) </span>roomAccessListRemoved<span class="signature">(roomName, listName, userNames)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.roomRemoveFromList">rpc.clientRequests.roomRemoveFromList</a></li>
+        
+            <li><a href="chat-service.ServiceAPI.html#changeAccessListsUpdates">chat-service.ServiceAPI#changeAccessListsUpdates</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Indicates a room access list remove.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Rooms name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>listName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>List name. Possible values are:
+'blacklist'|'adminlist'|'whitelist'</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userNames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User names added to the list.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roomAccessRemoved"><span class="type-signature">(static) </span>roomAccessRemoved<span class="signature">(roomName)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.roomAddToList">rpc.clientRequests.roomAddToList</a></li>
+        
+            <li><a href="rpc.clientRequests.html#.roomRemoveFromList">rpc.clientRequests.roomRemoveFromList</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Indicates that a user has lost a room access permission.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Room name.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roomJoinedEcho"><span class="type-signature">(static) </span>roomJoinedEcho<span class="signature">(roomName, id, njoined)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.roomJoin">rpc.clientRequests.roomJoin</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Echoes room join events from other connections of the same user,
+or a room join event for this connection triggered by the server.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Socket id.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>njoined</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Number of sockets that are still joined.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roomLeftEcho"><span class="type-signature">(static) </span>roomLeftEcho<span class="signature">(roomName, id, njoined)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.roomLeave">rpc.clientRequests.roomLeave</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Echoes room leave events from other connections of the same user,
+or a room leave event for this connection triggered by the server.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Socket id.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>njoined</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Number of sockets that are still joined.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roomMessage"><span class="type-signature">(static) </span>roomMessage<span class="signature">(roomName, message)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.roomMessage">rpc.clientRequests.roomMessage</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Room message.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Rooms name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="rpc.datatypes.html#.ProcessedMessage">rpc.datatypes.ProcessedMessage</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Message.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roomModeChanged"><span class="type-signature">(static) </span>roomModeChanged<span class="signature">(roomName, mode)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.roomSetWhitelistMode">rpc.clientRequests.roomSetWhitelistMode</a></li>
+        
+            <li><a href="chat-service.ServiceAPI.html#changeAccessListsUpdates">chat-service.ServiceAPI#changeAccessListsUpdates</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Indicates a room mode change.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Rooms name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Room mode.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roomUserJoined"><span class="type-signature">(static) </span>roomUserJoined<span class="signature">(roomName, userName)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.roomJoin">rpc.clientRequests.roomJoin</a></li>
+        
+            <li><a href="chat-service.ServiceAPI.html#changeUserlistUpdates">chat-service.ServiceAPI#changeUserlistUpdates</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Indicates that an another user has joined a room.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Rooms name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User name.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".roomUserLeft"><span class="type-signature">(static) </span>roomUserLeft<span class="signature">(roomName, userName)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html#.roomLeave">rpc.clientRequests.roomLeave</a></li>
+        
+            <li><a href="chat-service.ServiceAPI.html#changeUserlistUpdates">chat-service.ServiceAPI#changeUserlistUpdates</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Indicates that an another user has left a room.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>roomName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Rooms name.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User name.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".socketConnectEcho"><span class="type-signature">(static) </span>socketConnectEcho<span class="signature">(id, nconnected)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Indicates a connection of an another socket with the same user.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Socket id.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nconnected</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Total number of users's sockets.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".socketDisconnectEcho"><span class="type-signature">(static) </span>socketDisconnectEcho<span class="signature">(id, nconnected)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Indicates a disconnection of an another socket with the same user.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Socket id.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nconnected</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Total number of users's sockets.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".systemMessage"><span class="type-signature">(static) </span>systemMessage<span class="signature">(message)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Custom message from an another socket of the same user.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Arbitrary data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Wed Oct 12 2016 19:56:04 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

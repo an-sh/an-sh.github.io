@@ -1,0 +1,9607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CommandsHooks - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="chat-service.ChatService.html">ChatService</a><ul class='members'><li data-type='member'><a href="chat-service.ChatService.html#.ChatServiceError">ChatServiceError</a></li><li data-type='member'><a href="chat-service.ChatService.html#clusterBus">clusterBus</a></li><li data-type='member'><a href="chat-service.ChatService.html#instanceUID">instanceUID</a></li><li data-type='member'><a href="chat-service.ChatService.html#transport">transport</a></li></ul><ul class='methods'><li data-type='method'><a href="chat-service.ChatService.html#checkArguments">checkArguments</a></li><li data-type='method'><a href="chat-service.ChatService.html#close">close</a></li></ul></li><li><a href="chat-service.StorePlugin.html">StorePlugin</a></li><li><a href="chat-service.TransportPlugin.html">TransportPlugin</a><ul class='methods'><li data-type='method'><a href="chat-service.TransportPlugin.html#close">close</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#disconnectSocket">disconnectSocket</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#joinChannel">joinChannel</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#leaveChannel">leaveChannel</a></li><li data-type='method'><a href="chat-service.TransportPlugin.html#setEvents">setEvents</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="chat-service.ChatService.html#.event:closed">closed</a></li><li><a href="chat-service.ChatService.html#.event:lockTimeExceeded">lockTimeExceeded</a></li><li><a href="chat-service.ChatService.html#.event:ready">ready</a></li><li><a href="chat-service.ChatService.html#.event:storeConsistencyFailure">storeConsistencyFailure</a></li><li><a href="chat-service.ChatService.html#.event:transportConsistencyFailure">transportConsistencyFailure</a></li></ul><h3>Namespaces</h3><ul><li><a href="chat-service.html">chat-service</a></li><li><a href="chat-service.config.html">config</a></li><li><a href="chat-service.hooks.html">hooks</a></li><li><a href="rpc.html">rpc</a></li><li><a href="rpc.clientRequests.html">clientRequests</a><ul class='methods'><li data-type='method'><a href="rpc.clientRequests.html#.directAddToList">directAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetAccessList">directGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directGetWhitelistMode">directGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directRemoveFromList">directRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.directSetWhitelistMode">directSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.listOwnSockets">listOwnSockets</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomAddToList">roomAddToList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomCreate">roomCreate</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomDelete">roomDelete</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetAccessList">roomGetAccessList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetOwner">roomGetOwner</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomGetWhitelistMode">roomGetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryGet">roomHistoryGet</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomHistoryInfo">roomHistoryInfo</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomJoin">roomJoin</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomLeave">roomLeave</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomNotificationsInfo">roomNotificationsInfo</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRecentHistory">roomRecentHistory</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomRemoveFromList">roomRemoveFromList</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomSetWhitelistMode">roomSetWhitelistMode</a></li><li data-type='method'><a href="rpc.clientRequests.html#.roomUserSeen">roomUserSeen</a></li><li data-type='method'><a href="rpc.clientRequests.html#.systemMessage">systemMessage</a></li></ul></li><li><a href="rpc.datatypes.html">datatypes</a><ul class='members'><li data-type='member'><a href="rpc.datatypes.html#.codeToFormat">codeToFormat</a></li></ul></li><li><a href="rpc.serverNotifications.html">serverNotifications</a><ul class='methods'><li data-type='method'><a href="rpc.serverNotifications.html#.directMessage">directMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.directMessageEcho">directMessageEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginConfirmed">loginConfirmed</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.loginRejected">loginRejected</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListAdded">roomAccessListAdded</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessListRemoved">roomAccessListRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomAccessRemoved">roomAccessRemoved</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomJoinedEcho">roomJoinedEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomLeftEcho">roomLeftEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomMessage">roomMessage</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomModeChanged">roomModeChanged</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserJoined">roomUserJoined</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.roomUserLeft">roomUserLeft</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketConnectEcho">socketConnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.socketDisconnectEcho">socketDisconnectEcho</a></li><li data-type='method'><a href="rpc.serverNotifications.html#.systemMessage">systemMessage</a></li></ul></li></ul><h3>Mixins</h3><ul><li><a href="chat-service.RecoveryAPI.html">RecoveryAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.RecoveryAPI.html#getInstanceHeartbeat">getInstanceHeartbeat</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#instanceRecovery">instanceRecovery</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#roomStateSync">roomStateSync</a></li><li data-type='method'><a href="chat-service.RecoveryAPI.html#userStateSync">userStateSync</a></li></ul></li><li><a href="chat-service.ServiceAPI.html">ServiceAPI</a><ul class='methods'><li data-type='method'><a href="chat-service.ServiceAPI.html#addRoom">addRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#addUser">addUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeAccessListsUpdates">changeAccessListsUpdates</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomHistoryMaxSize">changeRoomHistoryMaxSize</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeRoomOwner">changeRoomOwner</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#changeUserlistUpdates">changeUserlistUpdates</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteRoom">deleteRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#deleteUser">deleteUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#disconnectUserSockets">disconnectUserSockets</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#execUserCommand">execUserCommand</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasDirectAccess">hasDirectAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoom">hasRoom</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasRoomAccess">hasRoomAccess</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#hasUser">hasUser</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#roomHasInList">roomHasInList</a></li><li data-type='method'><a href="chat-service.ServiceAPI.html#userHasInList">userHasInList</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="chat-service.ExecInfo.html">ExecInfo</a></li><li><a href="chat-service.hooks.CommandsHooks.html">CommandsHooks</a></li><li><a href="chat-service.hooks.HooksInterface.html">HooksInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#directMessagesChecker">directMessagesChecker</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onClose">onClose</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onConnect">onConnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onDisconnect">onDisconnect</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onJoin">onJoin</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onLeave">onLeave</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#onStart">onStart</a></li><li data-type='method'><a href="chat-service.hooks.HooksInterface.html#roomMessagesChecker">roomMessagesChecker</a></li></ul></li><li><a href="chat-service.TransportInterface.html">TransportInterface</a><ul class='methods'><li data-type='method'><a href="chat-service.TransportInterface.html#bindHandler">bindHandler</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#emitToChannel">emitToChannel</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getHandshakeData">getHandshakeData</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getServer">getServer</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#getSocket">getSocket</a></li><li data-type='method'><a href="chat-service.TransportInterface.html#sendToChannel">sendToChannel</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">CommandsHooks</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="chat-service.html">chat-service</a><a href="chat-service.hooks.html">.hooks</a>.</span>
+        
+        CommandsHooks
+        </h2>
+        
+            <div class="class-description"><p>Commands hooks full list, they are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a>. There are just two types of command hooks, for
+a concise description see <a href="global.html#beforeHook"><code>beforeHook</code></a> and <a href="global.html#afterHook"><code>afterHook</code></a>.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="rpc.clientRequests.html">rpc.clientRequests</a></li>
+        
+            <li><a href="chat-service.hooks.HooksInterface.html">chat-service.hooks.HooksInterface</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+
+    
+
+    <h4 class="name" id="directAddToListAfter"><span class="type-signature"></span>directAddToListAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directAddToListBefore"><span class="type-signature"></span>directAddToListBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directGetAccessListAfter"><span class="type-signature"></span>directGetAccessListAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directGetAccessListBefore"><span class="type-signature"></span>directGetAccessListBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directGetWhitelistModeAfter"><span class="type-signature"></span>directGetWhitelistModeAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directGetWhitelistModeBefore"><span class="type-signature"></span>directGetWhitelistModeBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directMessageAfter"><span class="type-signature"></span>directMessageAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directMessageBefore"><span class="type-signature"></span>directMessageBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directRemoveFromListAfter"><span class="type-signature"></span>directRemoveFromListAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directRemoveFromListBefore"><span class="type-signature"></span>directRemoveFromListBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directSetWhitelistModeAfter"><span class="type-signature"></span>directSetWhitelistModeAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="directSetWhitelistModeBefore"><span class="type-signature"></span>directSetWhitelistModeBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="listOwnSocketsAfter"><span class="type-signature"></span>listOwnSocketsAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="listOwnSocketsBefore"><span class="type-signature"></span>listOwnSocketsBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomAddToListAfter"><span class="type-signature"></span>roomAddToListAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomAddToListBefore"><span class="type-signature"></span>roomAddToListBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomCreateAfter"><span class="type-signature"></span>roomCreateAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomCreateBefore"><span class="type-signature"></span>roomCreateBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomDeleteAfter"><span class="type-signature"></span>roomDeleteAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomDeleteBefore"><span class="type-signature"></span>roomDeleteBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomGetAccessListAfter"><span class="type-signature"></span>roomGetAccessListAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomGetAccessListBefore"><span class="type-signature"></span>roomGetAccessListBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomGetOwnerAfter"><span class="type-signature"></span>roomGetOwnerAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomGetOwnerBefore"><span class="type-signature"></span>roomGetOwnerBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomGetWhitelistModeAfter"><span class="type-signature"></span>roomGetWhitelistModeAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomGetWhitelistModeBefore"><span class="type-signature"></span>roomGetWhitelistModeBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomHistoryGetAfter"><span class="type-signature"></span>roomHistoryGetAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomHistoryGetBefore"><span class="type-signature"></span>roomHistoryGetBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomHistoryInfoAfter"><span class="type-signature"></span>roomHistoryInfoAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomHistoryInfoBefore"><span class="type-signature"></span>roomHistoryInfoBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomJoinAfter"><span class="type-signature"></span>roomJoinAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomJoinBefore"><span class="type-signature"></span>roomJoinBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomLeaveAfter"><span class="type-signature"></span>roomLeaveAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomLeaveBefore"><span class="type-signature"></span>roomLeaveBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomMessageAfter"><span class="type-signature"></span>roomMessageAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomMessageBefore"><span class="type-signature"></span>roomMessageBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomNotificationsInfoAfter"><span class="type-signature"></span>roomNotificationsInfoAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomNotificationsInfoBefore"><span class="type-signature"></span>roomNotificationsInfoBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomRecentHistoryAfter"><span class="type-signature"></span>roomRecentHistoryAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomRecentHistoryBefore"><span class="type-signature"></span>roomRecentHistoryBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomRemoveFromListAfter"><span class="type-signature"></span>roomRemoveFromListAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomRemoveFromListBefore"><span class="type-signature"></span>roomRemoveFromListBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomSetWhitelistModeAfter"><span class="type-signature"></span>roomSetWhitelistModeAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomSetWhitelistModeBefore"><span class="type-signature"></span>roomSetWhitelistModeBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomUserSeenAfter"><span class="type-signature"></span>roomUserSeenAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="roomUserSeenBefore"><span class="type-signature"></span>roomUserSeenBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="systemMessageAfter"><span class="type-signature"></span>systemMessageAfter<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>After hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after Chat Service standard handlers, but before
+returning results to the command issuer.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+return unchanged command results to the command issuer. Rejections
+or a resolved array will override command results.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+                
+
+    
+
+    <h4 class="name" id="systemMessageBefore"><span class="type-signature"></span>systemMessageBefore<span class="signature">(execInfo, cb<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array|undefined)>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Before hooks are available for all <a href="rpc.clientRequests.html"><code>rpc.clientRequests</code></a> and
+are executed after a command arguments validation, but before
+Chat Service standard handler.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>execInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="chat-service.ExecInfo.html">chat-service.ExecInfo</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Command execution details.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#callback">callback</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Optional callback.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves without a data to
+continue a command execution. Rejections or a resolved array will
+stop further execution, and return results to the command issuer.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array|undefined)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Wed Oct 12 2016 19:56:04 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

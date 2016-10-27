@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a><ul class='methods'><li data-type='method'><a href="Client.html#send">send</a></li><li data-type='method'><a href="Client.html#invoke">invoke</a></li><li data-type='method'><a href="Client.html#register">register</a></li><li data-type='method'><a href="Client.html#reconnect">reconnect</a></li><li data-type='method'><a href="Client.html#close">close</a></li><li data-type='method'><a href="Client.html#emit">emit</a></li></ul></li><li><a href="Server.html">Server</a><ul class='methods'><li data-type='method'><a href="Server.html#getClient">getClient</a></li><li data-type='method'><a href="Server.html#close">close</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:open">open</a></li><li><a href="Client.html#event:error">error</a></li><li><a href="Client.html#event:retry">retry</a></li><li><a href="Client.html#event:close">close</a></li><li><a href="Client.html#event:connect">connect</a></li><li><a href="Server.html#event:ready">ready</a></li><li><a href="Server.html#event:error">error</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Client.html">Client</a><ul class='methods'><li data-type='method'><a href="Client.html#send">send</a></li><li data-type='method'><a href="Client.html#invoke">invoke</a></li><li data-type='method'><a href="Client.html#register">register</a></li><li data-type='method'><a href="Client.html#reconnect">reconnect</a></li><li data-type='method'><a href="Client.html#close">close</a></li><li data-type='method'><a href="Client.html#emit">emit</a></li></ul></li><li><a href="Server.html">Server</a><ul class='methods'><li data-type='method'><a href="Server.html#getClient">getClient</a></li><li data-type='method'><a href="Server.html#close">close</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="Client.html#event:preprocessingError">preprocessingError</a></li><li><a href="Client.html#event:open">open</a></li><li><a href="Client.html#event:error">error</a></li><li><a href="Client.html#event:retry">retry</a></li><li><a href="Client.html#event:close">close</a></li><li><a href="Client.html#event:connect">connect</a></li></ul>
 </nav>
 
 <div id="main">
@@ -53,7 +53,7 @@
 <a href="https://david-dm.org/an-sh/ws-messaging"><img src="https://david-dm.org/an-sh/ws-messaging.svg" alt="Dependency Status"></a>
 <a href="http://standardjs.com/"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="JavaScript Style Guide"></a></p>
 <p>Just a really thin abstraction layer on top of WebSocket for Node.js
-and Web browsers with a Promises and EventEmitter based APIs.</p>
+and Web Browsers with Promise and EventEmitter based APIs.</p>
 <h3>Features</h3><ul>
 <li><p>Send and receive notifications (events) via an EventEmitter API.</p>
 </li>
@@ -76,6 +76,8 @@ strings).</p>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#usage">Usage</a></li>
 <li><a href="#api">API</a></li>
+<li><a href="#network-format-description">Network format description</a></li>
+<li><a href="#data-validation">Data validation</a></li>
 <li><a href="#contribute">Contribute</a></li>
 <li><a href="#license">License</a></li>
 </ul>
@@ -112,10 +114,40 @@ client.on('connect', () => {
   client.invoke('myMethod', ...someArgs)
     .then(result => { /* do smth */ })
     .catch(error => { /* do smth */ })
-})</code></pre><p>See tests in <code>test/index.js</code> for more usage examples.</p>
+})</code></pre><p>Essentially there are two usage patterns that are working in both
+directions. Fire and forget via <code>send</code>/<code>on</code>, and RPC-style via
+<code>invoke</code>/<code>register</code>. Unlike <code>on</code>, only a single handler function can
+be registered per a method name.</p>
 <h2>API</h2><p><a href="https://an-sh.github.io/ws-messaging/0.5/Server.html">Server API</a> and
 <a href="https://an-sh.github.io/ws-messaging/0.5/Client.html">Client API</a>
 documentation is available online.</p>
+<h2>Network format description</h2><p>This section describes what data is actually passed to an encoder.</p>
+<p>There are only two type of messages. The first one is for normal
+messages:</p>
+<pre class="prettyprint source lang-javascript"><code>{
+  name: string,
+  args: Array,
+  id?: number
+}</code></pre><p>An <code>id</code> field is present for <code>invoke</code> calls. The second one is for
+ack (replies for <code>invoke</code> calls) messages:</p>
+<pre class="prettyprint source lang-javascript"><code>{
+  id: number
+  result?: Object
+  error?: Object
+}</code></pre><p>Either a <code>result</code> or an <code>error</code> field is included. Note that an
+<code>error</code> is the value returned by an <code>errorFormatter</code>, by default
+<code>String</code> is used as an <code>errorFormatter</code>.</p>
+<h2>Data validation</h2><p>All incoming data must be validated on a server side, including errors
+that are passed to a catch callback. By default only the
+<a href="network-format-description">network format</a> itself is
+validated. Validation can be made by a custom decoder (useful when a
+decoder is already using some scheme) or via a <code>receiveHook</code>, or
+inside a handler itself (useful for registered procedures). When
+validation is done inside <code>decoder</code>/<code>receiveHook</code>, just throw an error
+or reject a promise to fail a validation and prevent handlers
+execution. Also note that a promise returned by <code>invoke</code> can be
+rejected locally either with <code>Client.ConnectionError</code> or with
+<code>Client.TimeoutError</code>.</p>
 <h2>Contribute</h2><p>If you encounter a bug in this package, please submit a bug report to
 github repo <a href="https://github.com/an-sh/ws-messaging/issues">issues</a>.</p>
 <p>PRs are also accepted.</p>
@@ -132,7 +164,7 @@ github repo <a href="https://github.com/an-sh/ws-messaging/issues">issues</a>.</
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Fri Oct 21 2016 18:15:02 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Thu Oct 27 2016 18:56:23 GMT+0300 (MSK) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

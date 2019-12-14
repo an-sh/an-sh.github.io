@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="EmitterPubsubBroker.html">EmitterPubsubBroker</a><ul class='methods'><li data-type='method'><a href="EmitterPubsubBroker.html#close">close</a></li><li data-type='method'><a href="EmitterPubsubBroker.html#getClients">getClients</a></li><li data-type='method'><a href="EmitterPubsubBroker.html#getSubscriptions">getSubscriptions</a></li><li data-type='method'><a href="EmitterPubsubBroker.html#publish">publish</a></li><li data-type='method'><a href="EmitterPubsubBroker.html#send">send</a></li><li data-type='method'><a href="EmitterPubsubBroker.html#subscribe">subscribe</a></li><li data-type='method'><a href="EmitterPubsubBroker.html#unsubscribe">unsubscribe</a></li><li data-type='method'><a href="EmitterPubsubBroker.html#unsubscribeAll">unsubscribeAll</a></li></ul></li></ul><h3>Events</h3><ul><li><a href="Connector.html#.event:error">error</a></li><li><a href="Connector.html#.event:message">message</a></li><li><a href="EmitterPubsubBroker.html#.event:error">error</a></li></ul><h3>Interfaces</h3><ul><li><a href="Connector.html">Connector</a><ul class='methods'><li data-type='method'><a href="Connector.html#close">close</a></li><li data-type='method'><a href="Connector.html#publish">publish</a></li><li data-type='method'><a href="Connector.html#subscribe">subscribe</a></li><li data-type='method'><a href="Connector.html#unsubscribe">unsubscribe</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+    <section class="package">
+        <h3> </h3>		
+    </section>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    <section class="readme">
+        <article><h1>emitter-pubsub-broker</h1>
+<p><a href="https://badge.fury.io/js/emitter-pubsub-broker"><img src="https://badge.fury.io/js/emitter-pubsub-broker.svg" alt="NPM Version"></a>
+<a href="https://travis-ci.org/an-sh/emitter-pubsub-broker"><img src="https://travis-ci.org/an-sh/emitter-pubsub-broker.svg?branch=master" alt="Build Status"></a>
+<a href="https://ci.appveyor.com/project/an-sh/emitter-pubsub-broker"><img src="https://ci.appveyor.com/api/projects/status/y1hrrpumx5erpa6e/branch/master?svg=true" alt="Appveyor status"></a>
+<a href="https://codecov.io/gh/an-sh/emitter-pubsub-broker"><img src="https://codecov.io/gh/an-sh/emitter-pubsub-broker/branch/master/graph/badge.svg" alt="Coverage Status"></a>
+<a href="https://david-dm.org/an-sh/emitter-pubsub-broker"><img src="https://david-dm.org/an-sh/emitter-pubsub-broker.svg" alt="Dependency Status"></a>
+<a href="http://standardjs.com/"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="JavaScript Style Guide"></a></p>
+<p>An utility for connecting EventEmitters via a pubsub. Includes Redis
+and in-memory backends, and a support of other systems can be added by
+implementing a very simple Connector wrapper.</p>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#contribute">Contribute</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2>Installation</h2>
+<pre class="prettyprint source lang-sh"><code>$ npm i emitter-pubsub-broker
+</code></pre>
+<h2>Usage</h2>
+<pre class="prettyprint source lang-javascript"><code>const EmitterPubsubBroker = require('emitter-pubsub-broker')
+const connect = 'redis://localhost:6379' // or empty for in-memory backend
+
+let broker = new EmitterPubsubBroker(connect)
+let client = new EventEmitter() // anything that implements the interface
+
+client.on('myEvent', (...args) => { /* handler code */ })
+
+broker.subscribe(client, 'my-channel')
+  .then(() => broker.publish('my-channel', 'myEvent', ...args))
+</code></pre>
+<h2>API</h2>
+<p><a href="https://an-sh.github.io/emitter-pubsub-broker/1.0/index.html">API</a>
+documentation is available online.</p>
+<h2>Contribute</h2>
+<p>If you encounter a bug in this package, please submit a bug report to
+github repo
+<a href="https://github.com/an-sh/emitter-pubsub-broker/issues">issues</a>.</p>
+<p>PRs are also accepted.</p>
+<h2>License</h2>
+<p>MIT</p></article>
+    </section>
+
+
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Dec 14 2019 17:58:16 GMT+0300 (Moscow Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
